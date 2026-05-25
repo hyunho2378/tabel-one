@@ -48,7 +48,7 @@ export default function TableOneIDI() {
         }}
       >
         {ALL_PARTICIPANTS.map((p, i) => {
-          const accentColor = p.group === 'korean' ? color.brand : color.brandSky;
+          const accentColor = p.group === 'korean' ? color.primary : color.primaryLight;
           return (
             <div
               key={p.id}
@@ -109,7 +109,7 @@ export default function TableOneIDI() {
         }}>
           {ALL_PARTICIPANTS.map(p => {
             const isActive = activeTab === p.id;
-            const accentColor = p.group === 'korean' ? color.brand : color.brandSky;
+            const accentColor = p.group === 'korean' ? color.primary : color.primaryLight;
             return (
               <button
                 key={p.id}
@@ -139,7 +139,7 @@ export default function TableOneIDI() {
         {active && (
           <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
             {active.keyBehaviors.map((behavior, i) => {
-              const dotColor = active.group === 'korean' ? color.brand : color.brandSky;
+              const dotColor = active.group === 'korean' ? color.primary : color.primaryLight;
               return (
                 <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   <div style={{
@@ -170,8 +170,8 @@ export default function TableOneIDI() {
       <div
         ref={goldenRef}
         style={{
-          background: 'rgba(254,73,1,0.08)',
-          border: '1px solid rgba(254,73,1,0.3)',
+          background: 'rgba(124,58,237,0.08)',
+          border: '1px solid rgba(124,58,237,0.3)',
           borderRadius: layout.rLg,
           padding: 'clamp(24px, 3vw, 40px)',
           textAlign: 'center',
@@ -187,7 +187,7 @@ export default function TableOneIDI() {
           fontWeight: 800,
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
-          color: color.brand,
+          color: color.primary,
         }}>
           GOLDEN INSIGHT
         </p>

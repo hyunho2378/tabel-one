@@ -15,8 +15,8 @@ export default function BarChart({ items = [], group = 'both', maxValue }) {
     1
   );
 
-  const korColor  = color.brand;
-  const intlColor = color.brandSky;
+  const korColor  = '#7C3AED';
+  const intlColor = '#A78BFA';
 
   return (
     <div ref={ref} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>

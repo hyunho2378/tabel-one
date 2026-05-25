@@ -8,8 +8,8 @@ const { bmc } = tableData;
 function BMCBlock({ label, children, accent = false, style: extraStyle = {} }) {
   return (
     <div style={{
-      background: accent ? 'rgba(254,73,1,0.08)' : 'rgba(255,255,255,0.03)',
-      border: `1px solid ${accent ? 'rgba(254,73,1,0.3)' : 'rgba(255,255,255,0.07)'}`,
+      background: accent ? 'rgba(124,58,237,0.08)' : 'rgba(255,255,255,0.03)',
+      border: `1px solid ${accent ? 'rgba(124,58,237,0.3)' : 'rgba(255,255,255,0.07)'}`,
       borderRadius: layout.rMd,
       padding: 'clamp(16px, 2vw, 24px)',
       ...extraStyle,
@@ -21,7 +21,7 @@ function BMCBlock({ label, children, accent = false, style: extraStyle = {} }) {
         fontWeight: 800,
         letterSpacing: '0.1em',
         textTransform: 'uppercase',
-        color: accent ? color.brand : color.inkFaint,
+        color: accent ? color.primary : color.inkFaint,
       }}>
         {label}
       </p>
@@ -39,7 +39,7 @@ function BulletList({ items, accentDot = false }) {
             width: 5,
             height: 5,
             borderRadius: '50%',
-            background: accentDot ? color.brand : color.inkFaint,
+            background: accentDot ? color.primary : color.inkFaint,
             marginTop: 6,
             flexShrink: 0,
           }} />
@@ -149,7 +149,7 @@ export default function TableOneBMC() {
               fontFamily: font.family,
               fontSize: type.body.size,
               fontStyle: 'italic',
-              color: color.brand,
+              color: color.primary,
               lineHeight: 1.55,
               wordBreak: 'keep-all',
               fontWeight: 600,
@@ -260,7 +260,7 @@ export default function TableOneBMC() {
                   fontFamily: font.family,
                   fontSize: type.caption.size,
                   fontWeight: 800,
-                  color: color.brand,
+                  color: color.primary,
                   minWidth: 20,
                   flexShrink: 0,
                   paddingTop: 2,

@@ -51,7 +51,7 @@ export default function TableOneInsights() {
               fontFamily: font.family,
               fontSize: 'clamp(40px, 5vw, 72px)',
               fontWeight: 800,
-              color: color.brand,
+              color: color.primary,
               lineHeight: 1,
               letterSpacing: '-0.04em',
               marginBottom: 20,

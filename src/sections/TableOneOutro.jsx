@@ -38,7 +38,7 @@ export default function TableOneOutro() {
           fontWeight: 800,
           letterSpacing: '0.16em',
           textTransform: 'uppercase',
-          color: color.brand,
+          color: color.primary,
         }}>
           TABLE ONE · {meta.course}
         </p>
@@ -61,7 +61,7 @@ export default function TableOneOutro() {
         <div style={{
           width: 48,
           height: 2,
-          background: color.brand,
+          background: color.primary,
           borderRadius: 99,
           margin: '28px auto',
           opacity: 0.7,

@@ -4,19 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand:          '#FE4901',
-        'brand-strong': '#CC3A00',
-        'brand-sky':    '#FF8C5A',
-        'brand-alt':    '#FFAD8A',
-        'brand-light':  '#FFCFBA',
-        'brand-pale':   '#FFF0EA',
-        bg:             '#1A1A1A',
-        surface:        '#242424',
-        'surface-high': '#2E2E2E',
-        ink:            '#FFFFFF',
-        line:           '#333333',
-        ok:             '#27AE60',
-        warn:           '#E5484D',
+        primary:          '#7C3AED',
+        'primary-strong': '#6D28D9',
+        'primary-light':  '#A78BFA',
+        accent:           '#8B5CF6',
+        bg:               '#0D0D0D',
+        'bg-card':        '#131313',
+        ink:              '#FFFFFF',
+        ok:               '#10B981',
+        warn:             '#F59E0B',
       },
       fontFamily: {
         sans: ["'Pretendard Variable'", 'Pretendard', '-apple-system', "'Apple SD Gothic Neo'", 'system-ui', 'sans-serif'],

@@ -53,7 +53,7 @@ export default function Nav() {
             fontSize: 16,
             fontWeight: 800,
             letterSpacing: '-0.03em',
-            color: color.brand,
+            color: color.primary,
           }}
         >
           Table One

@@ -1,26 +1,20 @@
 export const color = {
-  bg:           '#1A1A1A',
-  bgAlpha:      'rgba(26,26,26,0.95)',
-  surface:      '#242424',
-  surfaceHigh:  '#2E2E2E',
-  white:        '#FFFFFF',
+  bg:           '#0D0D0D',
+  bgCard:       '#131313',
+  bgAlpha:      'rgba(13,13,13,0.95)',
 
-  brand:        '#FE4901',
-  brandStrong:  '#CC3A00',
-  brandSky:     '#FF8C5A',
-  brandAlt:     '#FFAD8A',
-  brandLight:   '#FFCFBA',
-  brandPale:    '#FFF0EA',
+  primary:      '#7C3AED',
+  primaryStrong: '#6D28D9',
+  primaryLight: '#A78BFA',
+  accent:       '#8B5CF6',
 
   ink:          '#FFFFFF',
-  inkMuted:     'rgba(255,255,255,0.60)',
-  inkFaint:     'rgba(255,255,255,0.35)',
+  inkMuted:     'rgba(255,255,255,0.55)',
+  inkFaint:     'rgba(255,255,255,0.25)',
 
-  line:         '#333333',
-  warn:         '#E5484D',
-  ok:           '#27AE60',
-
-  photoOverlay: 'rgba(0,0,0,0.42)',
+  line:         'rgba(255,255,255,0.08)',
+  warn:         '#F59E0B',
+  ok:           '#10B981',
 };
 
 export const font = {

@@ -75,7 +75,7 @@ export default function TableOneResearchOverview() {
                   fontWeight: 800,
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: color.brand,
+                  color: color.primary,
                 }}
               >
                 {entry.key}
@@ -110,8 +110,8 @@ export default function TableOneResearchOverview() {
             <div
               key={method.name}
               style={{
-                background: 'rgba(254,73,1,0.06)',
-                border: '1px solid rgba(254,73,1,0.15)',
+                background: 'rgba(124,58,237,0.06)',
+                border: '1px solid rgba(124,58,237,0.15)',
                 borderRadius: layout.rMd,
                 padding: 'clamp(16px, 2vw, 24px)',
                 opacity: methodVisible ? 1 : 0,
@@ -124,7 +124,7 @@ export default function TableOneResearchOverview() {
                 style={{
                   width: 36,
                   height: 36,
-                  background: 'rgba(254,73,1,0.15)',
+                  background: 'rgba(124,58,237,0.15)',
                   borderRadius: layout.rSm,
                   marginBottom: 16,
                 }}
@@ -147,8 +147,8 @@ export default function TableOneResearchOverview() {
                 <span
                   style={{
                     flexShrink: 0,
-                    background: 'rgba(254,73,1,0.20)',
-                    color: color.brand,
+                    background: 'rgba(124,58,237,0.20)',
+                    color: color.primary,
                     fontFamily: font.family,
                     fontSize: type.caption.size,
                     fontWeight: 700,

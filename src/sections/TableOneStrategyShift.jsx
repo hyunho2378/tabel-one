@@ -80,13 +80,13 @@ export default function TableOneStrategyShift() {
           flexShrink: 0,
         }}>
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="19" stroke={color.brand} strokeOpacity="0.4" strokeWidth="1" />
-            <path d="M14 20h12M22 15l5 5-5 5" stroke={color.brand} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="20" cy="20" r="19" stroke={color.primary} strokeOpacity="0.4" strokeWidth="1" />
+            <path d="M14 20h12M22 15l5 5-5 5" stroke={color.primary} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <span style={{
             fontFamily: font.family,
             fontSize: type.caption.size,
-            color: color.brand,
+            color: color.primary,
             fontWeight: 700,
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
@@ -97,8 +97,8 @@ export default function TableOneStrategyShift() {
 
         {/* After */}
         <div style={{
-          background: 'rgba(254,73,1,0.08)',
-          border: '1px solid rgba(254,73,1,0.35)',
+          background: 'rgba(124,58,237,0.08)',
+          border: '1px solid rgba(124,58,237,0.35)',
           borderRadius: layout.rLg,
           padding: 'clamp(24px, 3vw, 40px)',
           textAlign: 'center',
@@ -110,7 +110,7 @@ export default function TableOneStrategyShift() {
             fontWeight: 800,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
-            color: color.brand,
+            color: color.primary,
           }}>
             AFTER
           </p>
@@ -130,8 +130,8 @@ export default function TableOneStrategyShift() {
 
       {/* Reason */}
       <div style={{
-        borderLeft: `3px solid ${color.brand}`,
-        background: 'rgba(254,73,1,0.06)',
+        borderLeft: `3px solid ${color.primary}`,
+        background: 'rgba(124,58,237,0.06)',
         borderRadius: '0 8px 8px 0',
         padding: 'clamp(16px, 2vw, 24px)',
         marginBottom: 'clamp(40px, 5vw, 72px)',
@@ -146,7 +146,7 @@ export default function TableOneStrategyShift() {
           fontWeight: 800,
           letterSpacing: '0.1em',
           textTransform: 'uppercase',
-          color: color.brand,
+          color: color.primary,
         }}>
           WHY
         </p>
@@ -190,7 +190,7 @@ export default function TableOneStrategyShift() {
               fontFamily: font.family,
               fontSize: 'clamp(20px, 2.4vw, 36px)',
               fontWeight: 800,
-              color: color.brand,
+              color: color.primary,
               lineHeight: 1,
               marginBottom: 12,
               opacity: 0.5,
@@ -248,7 +248,7 @@ export default function TableOneStrategyShift() {
           fontFamily: font.family,
           fontSize: 'clamp(18px, 2.2vw, 32px)',
           fontWeight: 700,
-          color: color.brand,
+          color: color.primary,
           lineHeight: 1.4,
           letterSpacing: '-0.02em',
         }}>

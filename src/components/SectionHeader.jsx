@@ -11,7 +11,7 @@ export default function SectionHeader({ label, title, sub, align = 'left' }) {
           fontWeight: type.eyebrow.weight,
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
-          color: color.brand,
+          color: color.primaryLight,
         }}>
           {label}
         </p>

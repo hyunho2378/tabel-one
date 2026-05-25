@@ -5,7 +5,7 @@ import tableData from '../data/tableOne.json';
 
 const { persona } = tableData;
 
-const ACCENT = { korean: color.brand, international: color.brandSky };
+const ACCENT = { korean: color.primary, international: color.primaryLight };
 
 function PersonaCard({ p, visible, delay }) {
   const accent = ACCENT[p.id];
@@ -134,7 +134,7 @@ function PersonaCard({ p, visible, delay }) {
       {/* Quote */}
       <div style={{
         marginTop: 'auto',
-        background: `rgba(${p.id === 'korean' ? '254,73,1' : '255,140,90'},0.1)`,
+        background: `rgba(${p.id === 'korean' ? '124,58,237' : '167,139,250'},0.1)`,
         borderLeft: `3px solid ${accent}`,
         borderRadius: '0 8px 8px 0',
         padding: '14px 16px',

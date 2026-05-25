@@ -15,7 +15,7 @@ function CxValueText({ text }) {
   return (
     <>
       <span>{text.slice(0, idx)}</span>
-      <span style={{ color: color.brand }}>{HIGHLIGHT}</span>
+      <span style={{ color: color.primary }}>{HIGHLIGHT}</span>
       <span>{text.slice(idx + HIGHLIGHT.length)}</span>
     </>
   );
@@ -137,7 +137,7 @@ export default function TableOneOverview() {
                 fontWeight: 800,
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: color.brand,
+                color: color.primary,
               }}>
                 {label}
               </p>
@@ -160,8 +160,8 @@ export default function TableOneOverview() {
       <div
         ref={bannerRef}
         style={{
-          background: 'rgba(254,73,1,0.06)',
-          border: '1px solid rgba(254,73,1,0.2)',
+          background: 'rgba(124,58,237,0.06)',
+          border: '1px solid rgba(124,58,237,0.2)',
           borderRadius: layout.rLg,
           padding: 'clamp(28px, 4vw, 56px) clamp(24px, 4vw, 56px)',
           textAlign: 'center',

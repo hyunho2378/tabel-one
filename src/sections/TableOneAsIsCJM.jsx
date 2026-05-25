@@ -12,8 +12,8 @@ const EMOTION_COLOR = {
 };
 
 const PERSONA_ACCENT = {
-  '김서영': color.brand,
-  'Lilia':  color.brandSky,
+  '김서영': color.primary,
+  'Lilia':  color.primaryLight,
 };
 
 function EmotionDot({ emotionColor }) {
@@ -29,7 +29,7 @@ function EmotionDot({ emotionColor }) {
 }
 
 function CJMRow({ cjm, visible, delay }) {
-  const accent = PERSONA_ACCENT[cjm.persona] ?? color.brand;
+  const accent = PERSONA_ACCENT[cjm.persona] ?? color.primary;
   const cols = cjm.stages.length;
 
   return (

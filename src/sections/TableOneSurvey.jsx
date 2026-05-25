@@ -62,8 +62,8 @@ function PercentPairCard({ eyebrow, korNum, korLabel, intlNum, intlLabel, unit, 
       ref={cardRef}
       style={{
         flex: '1 1 240px',
-        background: 'rgba(254,73,1,0.06)',
-        border: '1px solid rgba(254,73,1,0.15)',
+        background: 'rgba(124,58,237,0.06)',
+        border: '1px solid rgba(124,58,237,0.15)',
         borderRadius: layout.rLg,
         padding: 24,
         opacity: cardVisible ? 1 : 0,
@@ -78,7 +78,7 @@ function PercentPairCard({ eyebrow, korNum, korLabel, intlNum, intlLabel, unit, 
         fontWeight: 800,
         letterSpacing: '0.1em',
         textTransform: 'uppercase',
-        color: color.brand,
+        color: color.primary,
       }}>
         {eyebrow}
       </p>
@@ -90,7 +90,7 @@ function PercentPairCard({ eyebrow, korNum, korLabel, intlNum, intlLabel, unit, 
             fontSize: 'clamp(28px,3vw,44px)',
             fontWeight: 800,
             lineHeight: 1,
-            color: color.brand,
+            color: color.primary,
           }}>
             {korValue}{unit}
           </div>
@@ -120,7 +120,7 @@ function PercentPairCard({ eyebrow, korNum, korLabel, intlNum, intlLabel, unit, 
             fontSize: 'clamp(28px,3vw,44px)',
             fontWeight: 800,
             lineHeight: 1,
-            color: color.brand,
+            color: color.primary,
           }}>
             {intlValue}{unit}
           </div>
@@ -219,7 +219,7 @@ const subsectionLabel = (text) => (
     fontWeight: 800,
     letterSpacing: '0.1em',
     textTransform: 'uppercase',
-    color: color.brand,
+    color: color.primary,
   }}>
     {text}
   </p>
@@ -427,8 +427,8 @@ export default function TableOneSurvey() {
               ref={staticCardRef}
               style={{
                 flex: '1 1 240px',
-                background: 'rgba(254,73,1,0.06)',
-                border: '1px solid rgba(254,73,1,0.15)',
+                background: 'rgba(124,58,237,0.06)',
+                border: '1px solid rgba(124,58,237,0.15)',
                 borderRadius: layout.rLg,
                 padding: 24,
                 opacity: staticCardVisible ? 1 : 0,
@@ -443,7 +443,7 @@ export default function TableOneSurvey() {
                 fontWeight: 800,
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: color.brand,
+                color: color.primary,
               }}>
                 앱 필요성 평균
               </p>
@@ -455,7 +455,7 @@ export default function TableOneSurvey() {
                     fontSize: 'clamp(28px,3vw,44px)',
                     fontWeight: 800,
                     lineHeight: 1,
-                    color: color.brand,
+                    color: color.primary,
                   }}>
                     3.51점
                   </div>
@@ -485,7 +485,7 @@ export default function TableOneSurvey() {
                     fontSize: 'clamp(28px,3vw,44px)',
                     fontWeight: 800,
                     lineHeight: 1,
-                    color: color.brand,
+                    color: color.primary,
                   }}>
                     3.56점
                   </div>
@@ -536,12 +536,12 @@ export default function TableOneSurvey() {
           </div>
 
           <div style={{
-            background: 'rgba(254,73,1,0.12)',
-            border: '1px solid rgba(254,73,1,0.3)',
+            background: 'rgba(124,58,237,0.12)',
+            border: '1px solid rgba(124,58,237,0.3)',
             borderRadius: layout.rSm,
             padding: '10px 16px',
           }}>
-            <span style={{ color: color.brand, fontWeight: 700, fontFamily: font.family, fontSize: type.body.size }}>
+            <span style={{ color: color.primary, fontWeight: 700, fontFamily: font.family, fontSize: type.body.size }}>
               언어 장벽: 한국인 0% vs 외국인 16%
             </span>
             <span style={{ color: color.inkMuted, fontFamily: font.family, fontSize: type.body.size }}>
@@ -577,7 +577,7 @@ export default function TableOneSurvey() {
                 fontFamily: font.family,
                 fontSize: type.body.size,
                 fontWeight: 700,
-                color: color.brand,
+                color: color.primary,
               }}>
                 한국인
               </p>
@@ -589,7 +589,7 @@ export default function TableOneSurvey() {
                 fontFamily: font.family,
                 fontSize: type.body.size,
                 fontWeight: 700,
-                color: color.brand,
+                color: color.primary,
               }}>
                 외국인
               </p>
@@ -599,8 +599,8 @@ export default function TableOneSurvey() {
 
           <div style={{ display: 'inline-block' }}>
             <span style={{
-              background: 'rgba(254,73,1,0.15)',
-              color: color.brand,
+              background: 'rgba(124,58,237,0.15)',
+              color: color.primary,
               fontFamily: font.family,
               fontSize: type.body.size,
               fontWeight: 700,
@@ -626,8 +626,8 @@ export default function TableOneSurvey() {
             flexWrap: 'wrap',
             marginBottom: 16,
           }}>
-            <AvgGauge label="한국인 평균" avg={2.3} col={color.brand} />
-            <AvgGauge label="외국인 평균" avg={2.7} col={color.brandSky} />
+            <AvgGauge label="한국인 평균" avg={2.3} col={color.primary} />
+            <AvgGauge label="외국인 평균" avg={2.7} col={color.primaryLight} />
           </div>
 
           <p style={{
@@ -680,7 +680,7 @@ export default function TableOneSurvey() {
                     {(i === 0 || i === 1) && (
                       <div style={{ marginBottom: 6 }}>
                         <span style={{
-                          background: color.brand,
+                          background: color.primary,
                           color: '#fff',
                           fontSize: '10px',
                           fontWeight: 700,
@@ -737,7 +737,7 @@ export default function TableOneSurvey() {
               <div
                 key={col}
                 style={{
-                  background: color.brand,
+                  background: color.primary,
                   color: '#ffffff',
                   fontFamily: font.family,
                   fontSize: type.body.size,

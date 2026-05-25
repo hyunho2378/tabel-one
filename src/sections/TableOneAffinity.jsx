@@ -62,7 +62,7 @@ export default function TableOneAffinity() {
                 fontFamily: font.family,
                 fontSize: 'clamp(28px, 3vw, 44px)',
                 fontWeight: 800,
-                color: color.brand,
+                color: color.primary,
                 lineHeight: 1,
                 marginBottom: 12,
               }}>
@@ -101,9 +101,9 @@ export default function TableOneAffinity() {
                       fontFamily: font.family,
                       fontSize: type.caption.size,
                       fontWeight: 600,
-                      color: color.brand,
-                      background: 'rgba(254,73,1,0.12)',
-                      border: '1px solid rgba(254,73,1,0.2)',
+                      color: color.primary,
+                      background: 'rgba(124,58,237,0.12)',
+                      border: '1px solid rgba(124,58,237,0.2)',
                       borderRadius: 999,
                       padding: '3px 10px',
                     }}
@@ -127,11 +127,11 @@ export default function TableOneAffinity() {
           preserveAspectRatio="none"
           style={{ display: 'block' }}
         >
-          <line x1="100" y1="0" x2="400" y2="62" stroke="rgba(254,73,1,0.35)" strokeWidth="1.5" strokeDasharray="6 4" />
-          <line x1="300" y1="0" x2="400" y2="62" stroke="rgba(254,73,1,0.25)" strokeWidth="1"   strokeDasharray="5 4" />
-          <line x1="500" y1="0" x2="400" y2="62" stroke="rgba(254,73,1,0.25)" strokeWidth="1"   strokeDasharray="5 4" />
-          <line x1="700" y1="0" x2="400" y2="62" stroke="rgba(254,73,1,0.35)" strokeWidth="1.5" strokeDasharray="6 4" />
-          <polygon points="395,66 405,66 400,72" fill="rgba(254,73,1,0.6)" />
+          <line x1="100" y1="0" x2="400" y2="62" stroke="rgba(124,58,237,0.35)" strokeWidth="1.5" strokeDasharray="6 4" />
+          <line x1="300" y1="0" x2="400" y2="62" stroke="rgba(124,58,237,0.25)" strokeWidth="1"   strokeDasharray="5 4" />
+          <line x1="500" y1="0" x2="400" y2="62" stroke="rgba(124,58,237,0.25)" strokeWidth="1"   strokeDasharray="5 4" />
+          <line x1="700" y1="0" x2="400" y2="62" stroke="rgba(124,58,237,0.35)" strokeWidth="1.5" strokeDasharray="6 4" />
+          <polygon points="395,66 405,66 400,72" fill="rgba(124,58,237,0.6)" />
         </svg>
 
         {/* Core need box */}
@@ -148,8 +148,8 @@ export default function TableOneAffinity() {
           }}
         >
           <div style={{
-            background: 'rgba(254,73,1,0.12)',
-            border: '1px solid rgba(254,73,1,0.5)',
+            background: 'rgba(124,58,237,0.12)',
+            border: '1px solid rgba(124,58,237,0.5)',
             borderRadius: layout.rLg,
             padding: 'clamp(20px, 2.5vw, 32px) clamp(32px, 5vw, 72px)',
             textAlign: 'center',
@@ -162,7 +162,7 @@ export default function TableOneAffinity() {
               fontWeight: 800,
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: color.brand,
+              color: color.primary,
             }}>
               CORE NEED
             </p>
@@ -220,7 +220,7 @@ export default function TableOneAffinity() {
               <div style={{
                 padding: 'clamp(8px, 1vw, 12px) clamp(12px, 1.5vw, 20px)',
                 borderRadius: layout.rSm,
-                background: step.highlight ? color.brand : 'rgba(255,255,255,0.05)',
+                background: step.highlight ? color.primary : 'rgba(255,255,255,0.05)',
                 border: `1px solid ${step.highlight ? 'transparent' : 'rgba(255,255,255,0.1)'}`,
               }}>
                 <span style={{

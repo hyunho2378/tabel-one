@@ -59,7 +59,7 @@ export default function TableOneServiceSafari() {
               fontWeight: 800,
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
-              color: color.brand,
+              color: color.primary,
             }}>
               {item.label}
             </p>
@@ -149,7 +149,7 @@ export default function TableOneServiceSafari() {
                 fontFamily: font.family,
                 fontSize: 'clamp(22px, 2.2vw, 32px)',
                 fontWeight: 800,
-                color: color.brand,
+                color: color.primary,
                 lineHeight: 1,
                 marginBottom: 10,
               }}>
@@ -190,8 +190,8 @@ export default function TableOneServiceSafari() {
       <div
         ref={insightRef}
         style={{
-          borderLeft: `3px solid ${color.brand}`,
-          background: 'rgba(254,73,1,0.08)',
+          borderLeft: `3px solid ${color.primary}`,
+          background: 'rgba(124,58,237,0.08)',
           borderRadius: '0 8px 8px 0',
           padding: 'clamp(20px, 2.5vw, 32px)',
           opacity: insightVisible ? 1 : 0,
@@ -206,7 +206,7 @@ export default function TableOneServiceSafari() {
           fontWeight: 800,
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
-          color: color.brand,
+          color: color.primary,
         }}>
           SAFARI INSIGHT
         </p>

@@ -8,8 +8,8 @@ export default function QuoteCard({ quote, source, align = 'left' }) {
     <div
       ref={ref}
       style={{
-        borderLeft: `3px solid ${color.brand}`,
-        background: 'rgba(254,73,1,0.08)',
+        borderLeft: '3px solid #7C3AED',
+        background: 'rgba(124,58,237,0.08)',
         borderRadius: '0 8px 8px 0',
         padding: '20px 24px',
         opacity: visible ? 1 : 0,

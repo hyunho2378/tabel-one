@@ -20,7 +20,7 @@ function NumericStat({ stat }) {
         fontFamily: font.family,
         fontSize: 'clamp(28px, 3.8vw, 52px)',
         fontWeight: 800,
-        color: color.brand,
+        color: color.primary,
         lineHeight: 1,
         letterSpacing: '-0.03em',
       }}>
@@ -59,7 +59,7 @@ function TextStat({ stat }) {
         fontFamily: font.family,
         fontSize: 'clamp(16px, 1.8vw, 26px)',
         fontWeight: 800,
-        color: color.brand,
+        color: color.primary,
         lineHeight: 1.2,
         letterSpacing: '-0.02em',
       }}>

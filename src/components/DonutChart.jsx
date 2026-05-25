@@ -1,7 +1,7 @@
 import { useReveal } from '../lib/useReveal.js';
 import { color, font, type } from '../tokens/web.js';
 
-const PALETTE = [color.brand, color.brandSky, color.brandAlt, color.ok];
+const PALETTE = ['#7C3AED', '#A78BFA', '#8B5CF6', '#10B981'];
 
 // segments: [{ label, value }]
 export default function DonutChart({ segments = [], centerValue, centerLabel, size = 180, thickness = 28 }) {
