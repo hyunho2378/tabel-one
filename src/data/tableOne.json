@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "projectName": "Table One",
+    "serviceName": "Solo-Dining Hub",
+    "subtitle": "혼자라는 이유로 줄어드는 것은 없다",
+    "team": "CX Design Team H2S",
+    "members": ["주현호", "Jhangeer Hilwa", "김서영", "Khalaf Sina"],
+    "course": "Digital CX for Startup — 한림대학교 2026-1",
+    "professor": "김성우 교수님",
+    "period": "2026.03 ~ 2026.05",
+    "methodology": "Double Diamond",
+    "location": "춘천"
+  },
+
+  "hero": {
+    "headline": "Nothing is reduced simply because you are alone",
+    "subheadline": "국적과 언어에 관계없이, 혼밥러 모두가 탐색부터 퇴장까지 존중받는 CX 디자인",
+    "cta": "프로젝트 보기"
+  },
+
+  "stats": [
+    { "label": "설문 응답자", "value": "64명", "sub": "한국인 39 + 외국인 25" },
+    { "label": "심층 인터뷰", "value": "4명", "sub": "한국인 2 + 외국인 2" },
+    { "label": "공통 1위 불편함", "value": "타인의 시선", "sub": "한국인 26% / 외국인 28%" }
+  ],
+
+  "overview": {
+    "problem": "20대 혼밥러는 탐색부터 퇴장까지 반복적인 제약을 경험하며, 자신이 충분히 고려되지 않는 존재라고 인식한다",
+    "approach": "한국인(베이스라인)과 외국인 유학생(익스트림 유저)을 동시에 연구해 Curb-Cut Effect를 적용한 통합 CX 설계",
+    "differentiation": "다른 팀이 앱 기능에만 집중할 때, 우리는 오프라인 공간 컨설팅 + 자율성 키오스크 + 3중 수익화로 전환",
+    "cxValue": "존중 (Nothing is reduced simply because you are alone)"
+  },
+
+  "researchOverview": {
+    "5w1h": {
+      "who": "한림대학교 20대 한국인·외국인 유학생 — 혼밥 경험 보유자",
+      "what": "혼밥 경험을 저해하는 심리적·물리적·정보적 장벽",
+      "where": "한림대 캠퍼스 + 춘천 식당가 (명동길·효문동·근화동) + 온라인 Google Form",
+      "when": "2026.03.30 ~ 2026.04.11 (약 2주)",
+      "why": "의견이 아닌 행동 증거를 수집해 실제 마찰 순간을 파악하기 위해",
+      "how": "정량 설문(n=64) + 심층 인터뷰 IDI(n=4) + 서비스 사파리(1회)"
+    },
+    "methods": [
+      { "name": "정량 설문", "desc": "빈도 분석·페인포인트 순위·기능 수요 정량화", "n": "n=64" },
+      { "name": "심층 인터뷰 IDI", "desc": "행동 내러티브·감정 여정·잠재 니즈 발굴", "n": "n=4" },
+      { "name": "서비스 사파리", "desc": "직접 체험을 통한 환경·시스템적 페인포인트 발견", "n": "춘천 미성카츠" }
+    ]
+  },
+
+  "persona": [
+    {
+      "id": "korean",
+      "name": "김서영 (Minyeong Kim)",
+      "age": "21세",
+      "affiliation": "한림대 재학생 / 기숙사 거주",
+      "frequency": "주 4~5회",
+      "budget": "8,000~13,000원",
+      "discovery": "네이버 지도",
+      "painPoints": [
+        "원하는 자리 선택권 박탈",
+        "1인석 내 서비스 불평등 (태블릿 없음)",
+        "낯선 혼밥러와의 강제 인접",
+        "온라인·오프라인 메뉴 정보 불일치"
+      ],
+      "quote": "원하는 자리에 앉아 먹겠다는 설렘으로 갔는데, 1인석으로 가라는 말에 온 걸 후회했다"
+    },
+    {
+      "id": "international",
+      "name": "Lilia",
+      "age": "22~23세",
+      "affiliation": "미국 LA 출신 교환학생 / 기숙사 거주",
+      "frequency": "주 3~4회",
+      "budget": "5,000~14,000원",
+      "discovery": "구글맵",
+      "koreanLevel": "일상 회화 가능, 읽기 어려움",
+      "painPoints": [
+        "한국어 전용 메뉴 및 키오스크",
+        "식이 라벨 없음 (Halal·Vegan·알레르기)",
+        "사진 없어 잘못된 음식 주문",
+        "직원과의 언어 스트레스"
+      ],
+      "quote": "고기가 들어있는지 모르면 그냥 나와요"
+    }
+  ],
+
+  "asIsCJM": [
+    {
+      "persona": "김서영",
+      "stages": [
+        { "name": "인지", "action": "수업 후 미성카츠 떠올림", "emotion": "설렘", "emotionColor": "positive", "pain": null, "critical": false },
+        { "name": "고려", "action": "지하가 개방적이지 않아 편할 것 같다 판단", "emotion": "기대", "emotionColor": "positive", "pain": null, "critical": false },
+        { "name": "입장", "action": "원하는 자리 가려다 점원이 1인석 유도", "emotion": "서러움·당혹", "emotionColor": "red", "pain": "자리 선택권 박탈", "critical": true },
+        { "name": "주문", "action": "1인석에 태블릿 없음, 깍두기 추가 불가", "emotion": "박탈감", "emotionColor": "red", "pain": "서비스 불평등", "critical": true },
+        { "name": "식사", "action": "모르는 혼밥러 3명 붙어앉아 각자 폰만 봄", "emotion": "씁쓸·어색", "emotionColor": "yellow", "pain": "강제 인접·좁은 테이블", "critical": false },
+        { "name": "퇴장", "action": "위아래 어디로 나갈지, 그릇 처리 걱정", "emotion": "찜찜한 회복", "emotionColor": "yellow", "pain": "퇴장 동선 불명확", "critical": false }
+      ]
+    },
+    {
+      "persona": "Lilia",
+      "stages": [
+        { "name": "인지", "action": "한국 음식 먹고 싶음", "emotion": "설렘", "emotionColor": "positive", "pain": null, "critical": false },
+        { "name": "고려", "action": "구글맵 검색하나 한국어 메뉴 못 읽음", "emotion": "불안한 기대", "emotionColor": "yellow", "pain": "정보 접근 불가", "critical": false },
+        { "name": "입장", "action": "다른 혼밥 손님 확인 후 착석, 점원이 1인석 유도", "emotion": "압도됨", "emotionColor": "red", "pain": "자리 선택권 박탈", "critical": true },
+        { "name": "주문", "action": "한국어 전용 키오스크, 파파고 써도 불확실", "emotion": "혼란·좌절", "emotionColor": "red", "pain": "언어 장벽", "critical": true },
+        { "name": "식사", "action": "음식이 예상과 다름 — 너무 맵거나 잘못된 메뉴", "emotion": "실망", "emotionColor": "red", "pain": "식이 안전 실패", "critical": true },
+        { "name": "퇴장", "action": "어떻게 나갈지 몰라 주변 따라 나감", "emotion": "안도하나 정신적 소진", "emotionColor": "yellow", "pain": "퇴장 동선 불명확", "critical": false }
+      ]
+    }
+  ],
+
+  "insights": [
+    {
+      "no": "01",
+      "title": "정보 부재로 인한 불안한 진입",
+      "desc": "혼밥 고객은 방문 전 정보 부족으로 이 공간이 자신에게 적합한지 판단하지 못한 채 불안한 상태로 진입을 결정하게 된다"
+    },
+    {
+      "no": "02",
+      "title": "통제감 박탈",
+      "desc": "혼밥 고객은 좌석·주문·정보 제공 과정에서 자신의 상황이 반영되지 않는 경험을 하며 서비스를 스스로 통제할 수 없다는 박탈감을 느낀다"
+    },
+    {
+      "no": "03",
+      "title": "존중받지 못한다는 인식",
+      "desc": "혼밥 고객은 이용 과정의 반복적 제약을 통해 자신이 충분히 고려되지 않은 존재라고 인식하게 되며 재방문 의지가 낮아진다"
+    }
+  ],
+
+  "affinity": {
+    "clusters": [
+      { "cluster": "확신의 부재", "desc": "정보 설계 문제", "personas": ["Lilia 고려·주문"] },
+      { "cluster": "자율성과 선택감", "desc": "경험 설계 문제", "personas": ["김서영 고려·입장·식사"] },
+      { "cluster": "동등한 존재로 대우", "desc": "서비스 철학 문제", "personas": ["김서영 주문", "Lilia 입장"] },
+      { "cluster": "경험의 소진", "desc": "위 3개의 결과물", "personas": ["공통"] }
+    ],
+    "coreNeed": "혼자서도 온전히 경험을 통제할 수 있다는 확신"
+  },
+
+  "strategyShift": {
+    "before": "정보 제공 앱 (다른 3팀과 동일)",
+    "after": "오프라인 공간 컨설팅 + 자율성 키오스크 + 3중 수익화",
+    "reason": "앱 기능만으로는 해결 불가능한 물리적 장벽이 존재함을 리서치가 증명",
+    "cxValue": "Nothing is reduced simply because you are alone",
+    "shifts": [
+      {
+        "title": "입장 시 선택권 부여",
+        "desc": "파티션 설치로 손님이 원하는 자리 직접 선택 — 1인석도 4인석도 스스로 결정"
+      },
+      {
+        "title": "자리 선택 키오스크",
+        "desc": "비대면으로 전체 좌석 표시 — 선택 즉시 주방 화면에 실시간 반영"
+      },
+      {
+        "title": "사장님 온보딩 컨설팅",
+        "desc": "공간 재설계 + 응대 멘트 가이드까지 제공하는 B2B 지속 수익 모델"
+      },
+      {
+        "title": "주문·결제 단계 분리",
+        "desc": "자리 선택은 입장 키오스크 / 메뉴 주문은 테이블오더 또는 QR"
+      }
+    ]
+  },
+
+  "bmc": {
+    "customerSegments": {
+      "primary": "한국인 20대 혼밥러",
+      "extreme": "20대 외국인 유학생 (Curb-Cut Effect 기준점)",
+      "b2b": "춘천 로컬 식당 사장님"
+    },
+    "valuePropositions": {
+      "core": "Nothing is reduced simply because you are alone",
+      "b2c": ["검증된 메뉴·좌석·식이 정보", "Solo-Friendly 인증·리뷰", "다국어 메뉴·영어 키오스크"],
+      "b2b": ["미충족 외국인 고객 유입", "1인석 공간 재설계 컨설팅", "행동 데이터 인사이트"]
+    },
+    "channels": ["모바일 앱", "한림대 글로벌센터", "SNS·에브리타임", "Solo-Friendly 배지", "재설계된 공간 자체"],
+    "revenueStreams": {
+      "r1": "식당 광고 수수료 (월정액)",
+      "r2": "1인석 공간 재설계 컨설팅 수수료",
+      "r3": "프리미엄 멤버십",
+      "r4": "행동 데이터 인사이트 리포트 판매"
+    },
+    "keyResources": ["검증된 혼밥 리뷰 DB", "CX 공간 컨설팅 역량", "메뉴 실시간 동기화 시스템", "다국어 콘텐츠팀"],
+    "keyPartners": ["춘천 로컬 식당", "한림대 글로벌센터", "인테리어·가구 협력사", "POS·키오스크 솔루션 업체"],
+    "costStructure": {
+      "fixed": ["앱 개발·유지보수", "서버", "다국어·리뷰 인력"],
+      "variable": ["마케팅", "공간 컨설팅 실행비", "인증 운영"]
+    }
+  },
+
+  "toBeCJM": { "placeholder": true, "note": "추후 작업 예정" },
+  "serviceBlueprint": { "placeholder": true, "note": "추후 작업 예정" }
+}
