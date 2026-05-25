@@ -37,3 +37,26 @@ body {
 
   .t1-cjm-stages  { grid-template-columns: repeat(3, 1fr) !important; }
 }
+
+/* ── Consulting animations ────────────────────────── */
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(124,58,237,0.4); }
+  50%       { opacity: 0.85; box-shadow: 0 0 0 8px rgba(124,58,237,0); }
+}
+
+/* ── Consulting responsive ────────────────────────── */
+@media (max-width: 768px) {
+  .cx-nav-links  { display: none !important; }
+  .cx-hamburger  { display: flex !important; }
+  .cx-hero-grid  { grid-template-columns: 1fr !important; }
+  .cx-hero-3d    { display: none !important; }
+  .cx-grid-2,
+  .cx-grid-3     { grid-template-columns: 1fr !important; }
+  .cx-demo-grid  { grid-template-columns: 1fr !important; }
+  .cx-process    { flex-direction: column !important; align-items: center !important; }
+}

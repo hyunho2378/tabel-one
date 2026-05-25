@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "siteName": "Table One CX Consulting",
+    "tagline": "혼밥 공간을 존중의 경험으로 바꿉니다",
+    "taglineEn": "We Engineer Solo-Dining Respect, Not Luck",
+    "description": "리서치 기반 공간 재설계와 디지털 솔루션으로 로컬 식당의 CX를 혁신합니다",
+    "contact": {
+      "email": "tableonecx@hallym.ac.kr",
+      "kakao": "Table One CX"
+    },
+    "team": "CX Design Team H2S",
+    "affiliation": "한림대학교 Digital CX for Startup"
+  },
+
+  "hero": {
+    "badge": "CX Space Consulting",
+    "headline": "혼밥 공간을\n존중의 경험으로\n바꿉니다",
+    "headlineEn": "We Engineer Solo-Dining Respect, Not Luck",
+    "sub": "리서치 기반 공간 재설계와 디지털 솔루션으로\n로컬 식당의 고객 경험을 혁신합니다",
+    "cta1": "도입 문의하기",
+    "cta2": "수행사례 보기",
+    "stats": [
+      {
+        "value": 64,
+        "unit": "명",
+        "label": "리서치 참여자",
+        "sub": "한국인 39 + 외국인 25"
+      },
+      {
+        "value": 3,
+        "unit": "개",
+        "label": "핵심 솔루션",
+        "sub": "공간 + 키오스크 + 온보딩"
+      },
+      {
+        "value": 2,
+        "unit": "개",
+        "label": "타겟 고객군",
+        "sub": "한국인 혼밥러 + 외국인 유학생"
+      }
+    ]
+  },
+
+  "problem": {
+    "label": "WHY IT MATTERS",
+    "headline": "왜 혼밥 CX인가",
+    "sub": "데이터가 증명하는 현실",
+    "facts": [
+      {
+        "no": "01",
+        "stat": "26~28%",
+        "desc": "한국인과 외국인 모두 혼밥 시 1위 불편함으로 타인의 시선을 꼽았다",
+        "source": "Table One 설문조사 n=64, 2026"
+      },
+      {
+        "no": "02",
+        "stat": "0%",
+        "desc": "한국인 응답자 중 언어 장벽을 불편함으로 꼽은 비율. 외국인은 16%였다. 같은 공간, 다른 경험",
+        "source": "Table One 설문조사 n=64, 2026"
+      },
+      {
+        "no": "03",
+        "stat": "2.7 / 5",
+        "desc": "외국인 평균 불편도. 더 자주 혼밥하는 한국인(2.3)보다 높다. 빈도가 불편함을 해소하지 않는다",
+        "source": "Table One 설문조사 n=64, 2026"
+      },
+      {
+        "no": "04",
+        "stat": "3곳 중 1곳",
+        "desc": "서비스 사파리 결과 — 영어 키오스크, 식이 라벨, 웨이파인딩 세 가지가 없어 외국인 고객을 잃은 식당",
+        "source": "Table One 서비스 사파리, 미성카츠 춘천, 2026"
+      }
+    ],
+    "insight": "경제적 장벽은 낮다. CX 장벽이 높다. 고치면 기꺼이 지출하는 고객이 기다리고 있다"
+  },
+
+  "services": {
+    "label": "SERVICES",
+    "headline": "3가지 패키지",
+    "sub": "리서치에서 나온 문제를 리서치로 검증된 솔루션으로 해결한다",
+    "items": [
+      {
+        "no": "01",
+        "id": "space",
+        "name": "공간 재설계",
+        "nameEn": "Space Redesign",
+        "icon": "partition",
+        "summary": "파티션 배치와 좌석 구조를 바꿔 혼밥러가 원하는 자리를 스스로 선택하게 만든다",
+        "detail": "혼밥 고객이 1인석으로만 유도될 때 느끼는 박탈감은 서비스 문제가 아니라 공간 구조 문제다. 파티션을 설치해 4인석도 1인 공간으로 전환 가능하게 하면 선택지가 생긴다. 선택지가 생기면 존중받는 느낌이 된다",
+        "deliverables": [
+          "현장 공간 진단 및 동선 분석",
+          "파티션 배치 플랜 (CAD 도면)",
+          "가구·조명 배치 가이드",
+          "혼밥 존 설계 및 사인 시스템"
+        ],
+        "painSolved": "자리 선택권 박탈 / 강제 1인석 유도 / 어색한 테이블 구조",
+        "curbCut": "혼밥러를 위한 분리 좌석은 커플·단체 고객의 프라이버시도 높인다"
+      },
+      {
+        "no": "02",
+        "id": "kiosk",
+        "name": "키오스크 도입",
+        "nameEn": "Kiosk Installation",
+        "icon": "screen",
+        "summary": "입장 시 비대면으로 자리를 선택하고, 선택 즉시 주방 사장님 화면에 실시간 반영된다",
+        "detail": "사장님이 주방에 있어 못 나오는 상황, 손님이 어디 앉아야 할지 몰라 서 있는 상황 — 이 두 가지를 동시에 해결한다. 손님은 전체 좌석을 보고 스스로 선택한다. 사장님은 나오지 않아도 실시간으로 파악한다. Service Blueprint의 내부 상호작용선을 디지털로 연결하는 것",
+        "deliverables": [
+          "입장 키오스크 UI 설계 및 납품",
+          "사장님 대시보드 설치 (태블릿 or 모니터)",
+          "한국어 + 영어 + 아랍어 다국어 지원",
+          "실시간 좌석 현황 연동",
+          "메뉴 QR 연결 (선택)"
+        ],
+        "painSolved": "자리 안내 부재 / 언어 장벽 / 비대면 선호 / 사장님 응대 부담",
+        "curbCut": "외국인을 위한 영어 UI는 한국인의 비대면 주문 선호와도 일치한다",
+        "hasDemo": true
+      },
+      {
+        "no": "03",
+        "id": "onboarding",
+        "name": "사장님 온보딩",
+        "nameEn": "Owner Onboarding",
+        "icon": "guide",
+        "summary": "응대 멘트 가이드, Solo-Friendly 인증, 외국인 고객 응대 매뉴얼까지 제공한다",
+        "detail": "공간과 기술이 바뀌어도 사람이 바뀌지 않으면 경험은 바뀌지 않는다. 사장님이 혼밥 손님에게 건네는 한마디가 전체 CX를 좌우한다. 우리가 제공하는 멘트 가이드는 리서치에서 실제 사용자가 원한다고 말한 표현에서 출발한다",
+        "deliverables": [
+          "Solo-Friendly 인증 배지 발급",
+          "혼밥 손님 응대 멘트 가이드북",
+          "외국인 고객 기초 응대 카드 (영어·아랍어)",
+          "Table One 플랫폼 등록 및 노출",
+          "분기별 CX 데이터 리포트"
+        ],
+        "painSolved": "불친절한 직원 응대 / 외국인 커뮤니케이션 공포 / 1인 손님 차별 인식",
+        "curbCut": "외국인 응대 매뉴얼은 사장님의 외국인 고객 공포를 없애고 신규 매출을 만든다"
+      }
+    ]
+  },
+
+  "demo": {
+    "label": "LIVE DEMO",
+    "headline": "실제로 이렇게 작동합니다",
+    "sub": "손님이 자리를 선택하는 순간, 주방 사장님 화면에 실시간으로 반영됩니다",
+    "kiosk": {
+      "title": "손님 키오스크",
+      "sub": "입장 시 전체 좌석 확인 후 직접 선택",
+      "seats": [
+        { "id": 1, "label": "1번", "status": "occupied" },
+        { "id": 2, "label": "2번", "status": "available" },
+        { "id": 3, "label": "3번", "status": "available" },
+        { "id": 4, "label": "4번", "status": "available" },
+        { "id": 5, "label": "5번", "status": "occupied" },
+        { "id": 6, "label": "6번", "status": "available" }
+      ],
+      "selectPrompt": "앉고 싶은 자리를 선택하세요",
+      "confirmLabel": "이 자리로 할게요",
+      "languages": ["한국어", "English", "عربي"]
+    },
+    "dashboard": {
+      "title": "사장님 대시보드",
+      "sub": "주방에서 실시간 확인",
+      "statusLabels": {
+        "occupied": "사용 중",
+        "available": "비어있음",
+        "selecting": "선택 중",
+        "confirmed": "방금 입장"
+      },
+      "notification": "3번 테이블 손님 입장"
+    }
+  },
+
+  "effects": {
+    "label": "WHY IT WORKS",
+    "headline": "도입 효과",
+    "sub": "공간이 바뀌면 경험이 바뀌고, 경험이 바뀌면 매출이 바뀐다",
+    "items": [
+      {
+        "icon": "users",
+        "title": "외국인 고객 유입",
+        "desc": "영어 키오스크와 식이 라벨로 기존에 접근하지 못했던 외국인 유학생 고객층 확보. 한림대 외국인 재학생만 약 1,200명 이상",
+        "source": "한림대학교 외국인 유학생 현황 2025"
+      },
+      {
+        "icon": "rotate",
+        "title": "회전율 개선",
+        "desc": "혼밥 손님의 4인석 장시간 점유 문제를 파티션 분리로 해결. 피크타임 좌석 활용도 향상",
+        "source": "Table One 공간 재설계 파일럿 분석"
+      },
+      {
+        "icon": "heart",
+        "title": "재방문율 향상",
+        "desc": "존중받는 경험을 한 혼밥러는 돌아온다. 우리 리서치에서 존중받지 못한 경험이 재방문 의지를 낮춘다는 것을 확인했다",
+        "source": "Table One IDI n=4, 2026"
+      },
+      {
+        "icon": "globe",
+        "title": "다국어 접근성",
+        "desc": "한국어 전용 환경을 다국어로 전환. 외국인 고객의 주문 불안과 언어 스트레스를 제거",
+        "source": "Table One 서비스 사파리, 2026"
+      }
+    ]
+  },
+
+  "portfolio": {
+    "label": "CASE STUDY",
+    "headline": "수행사례",
+    "sub": "리서치부터 솔루션 설계까지, 실제 현장에서 검증했다",
+    "cases": [
+      {
+        "id": "misung",
+        "client": "미성카츠",
+        "location": "춘천 효문동",
+        "industry": "로컬 식당 / 돈까스",
+        "period": "2026.03 ~ 2026.05",
+        "type": "파일럿 리서치 + 솔루션 설계",
+        "challenge": "혼밥 손님 1인석 강제 유도, 키오스크 한국어 전용, 외국인 고객 진입 장벽 3중 존재",
+        "approach": [
+          "서비스 사파리 직접 체험 (외국인 학생 페르소나)",
+          "설문 n=64 + 심층 인터뷰 n=4 교차 검증",
+          "CJM 2개 제작 (한국인·외국인 여정 비교)",
+          "Service Blueprint 설계 (키오스크 내부 상호작용선 포함)"
+        ],
+        "solutions": [
+          "파티션 배치 플랜 — 1인/4인 겸용 좌석 설계",
+          "자리 선택 키오스크 UI 설계 (한/영 2개 언어)",
+          "사장님 응대 멘트 가이드 제공"
+        ],
+        "keyInsight": "경제적 장벽은 낮다. CX 장벽이 높다. 세 가지 요소의 부재로 매출을 잃고 있었다",
+        "before": [
+          "한국어 전용 키오스크",
+          "1인석 강제 유도 멘트",
+          "외국인 식이 정보 전무",
+          "웨이파인딩 실패"
+        ],
+        "after": [
+          "한영 2개 언어 키오스크 설계",
+          "자율 좌석 선택 플랜",
+          "식이 라벨 시스템 제안",
+          "Solo-Friendly 인증 설계"
+        ],
+        "tags": ["CX 리서치", "공간 재설계", "키오스크 설계", "다국어"]
+      }
+    ]
+  },
+
+  "cta": {
+    "label": "START A PROJECT",
+    "headline": "함께 바꿔볼까요",
+    "sub": "식당의 크기에 관계없이, 혼밥러를 존중하는 공간을 만들고 싶은 사장님이라면 누구든 환영합니다",
+    "items": [
+      {
+        "icon": "search",
+        "title": "현장 진단",
+        "desc": "방문해서 공간 구조와 손님 동선을 직접 파악합니다"
+      },
+      {
+        "icon": "pencil",
+        "title": "솔루션 설계",
+        "desc": "리서치 데이터 기반으로 우리 공간에 맞는 플랜을 만듭니다"
+      },
+      {
+        "icon": "rocket",
+        "title": "실행 + 사후관리",
+        "desc": "설치 후에도 데이터 리포트와 멘트 가이드를 업데이트합니다"
+      }
+    ],
+    "contactLabel": "문의하기",
+    "contactEmail": "tableonecx@hallym.ac.kr",
+    "portfolioLabel": "포트폴리오 보기"
+  },
+
+  "nav": {
+    "logo": "Table One",
+    "links": [
+      { "label": "왜 혼밥 CX인가", "anchor": "#problem" },
+      { "label": "서비스",          "anchor": "#services" },
+      { "label": "라이브 데모",     "anchor": "#demo" },
+      { "label": "도입 효과",       "anchor": "#effects" },
+      { "label": "수행사례",        "anchor": "#portfolio" },
+      { "label": "문의",            "anchor": "#cta" }
+    ],
+    "ctaLabel": "문의하기"
+  },
+
+  "footer": {
+    "copy": "Table One CX Consulting — CX Design Team H2S",
+    "sub": "한림대학교 Digital CX for Startup 2026-1 · 지도교수 김성우"
+  }
+}
