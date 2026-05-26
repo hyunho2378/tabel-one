@@ -14,7 +14,7 @@ export default function TableOneOutro() {
       maxWidth: layout.container,
       margin: '0 auto',
       boxSizing: 'border-box',
-      minHeight: '60vh',
+      minHeight: 'clamp(320px, 40vh, 480px)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',

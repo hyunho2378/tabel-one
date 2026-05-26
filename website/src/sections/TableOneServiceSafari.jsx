@@ -118,10 +118,10 @@ export default function TableOneServiceSafari() {
                   <span style={{
                     display: 'inline-block',
                     background: color.warn,
-                    color: '#fff',
-                    fontSize: '10px',
+                    color: color.ink,
+                    fontSize: type.caption.size,
                     fontWeight: 700,
-                    padding: '3px 8px',
+                    padding: '3px 10px',
                     borderRadius: 999,
                     fontFamily: font.family,
                   }}>
@@ -132,10 +132,10 @@ export default function TableOneServiceSafari() {
                   <span style={{
                     display: 'inline-block',
                     background: color.ok,
-                    color: '#fff',
-                    fontSize: '10px',
+                    color: color.ink,
+                    fontSize: type.caption.size,
                     fontWeight: 700,
-                    padding: '3px 8px',
+                    padding: '3px 10px',
                     borderRadius: 999,
                     fontFamily: font.family,
                   }}>

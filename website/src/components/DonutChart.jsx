@@ -1,7 +1,7 @@
 import { useReveal } from '../lib/useReveal.js';
 import { color, font, type } from '../tokens/web.js';
 
-const PALETTE = ['#7C3AED', '#A78BFA', '#8B5CF6', '#10B981'];
+const PALETTE = ['#7C3AED', '#A78BFA', '#8B5CF6', '#6D28D9'];
 
 // segments: [{ label, value }]
 export default function DonutChart({ segments = [], centerValue, centerLabel, size = 180, thickness = 28 }) {
@@ -68,6 +68,7 @@ export default function DonutChart({ segments = [], centerValue, centerLabel, si
               <span style={{
                 fontFamily: font.family,
                 fontSize: type.caption.size,
+                fontWeight: type.caption.weight,
                 color: color.inkMuted,
               }}>
                 {centerLabel}
@@ -81,7 +82,7 @@ export default function DonutChart({ segments = [], centerValue, centerLabel, si
         {segments.map((seg, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
             <div style={{ width: 10, height: 10, borderRadius: '50%', background: PALETTE[i % PALETTE.length], flexShrink: 0 }} />
-            <span style={{ fontFamily: font.family, fontSize: type.caption.size, color: color.inkMuted }}>
+            <span style={{ fontFamily: font.family, fontSize: type.caption.size, fontWeight: type.caption.weight, color: color.inkMuted }}>
               {seg.label}
             </span>
           </div>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { color, font, layout, type } from '../tokens/web.js';
+import { color, font, layout } from '../tokens/web.js';
 
 const LINKS = [
   { label: '개요',     href: '#overview'  },

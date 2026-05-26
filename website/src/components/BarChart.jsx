@@ -15,31 +15,32 @@ export default function BarChart({ items = [], group = 'both', maxValue }) {
     1
   );
 
-  const korColor  = '#7C3AED';
-  const intlColor = '#A78BFA';
+  const korColor  = color.primary;
+  const intlColor = color.primaryLight;
 
   return (
-    <div ref={ref} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+    <div ref={ref} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
       {items.map((item, i) => (
         <div key={i}>
           <div style={{
             fontFamily: font.family,
             fontSize: type.body.size,
+            fontWeight: type.body.weight,
             color: color.inkMuted,
-            marginBottom: 8,
+            marginBottom: 6,
           }}>
             {item.label}
           </div>
 
           {group === 'both' ? (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
               {[
                 { val: item.korean,        col: korColor,  dot: korColor,  suffix: item.korean },
                 { val: item.international, col: intlColor, dot: intlColor, suffix: item.international },
               ].map(({ val, col, dot, suffix }, j) => (
                 <div key={j} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: dot, flexShrink: 0 }} />
-                  <div style={{ flex: 1, height: 10, background: color.line, borderRadius: 999, overflow: 'hidden' }}>
+                  <div style={{ width: 7, height: 7, borderRadius: '50%', background: dot, flexShrink: 0 }} />
+                  <div style={{ flex: 1, height: 8, background: color.line, borderRadius: 999, overflow: 'hidden' }}>
                     <div style={{
                       height: '100%',
                       width: visible ? `${(val / computedMax) * 100}%` : '0%',
@@ -51,6 +52,7 @@ export default function BarChart({ items = [], group = 'both', maxValue }) {
                   <span style={{
                     fontFamily: font.family,
                     fontSize: type.caption.size,
+                    fontWeight: type.caption.weight,
                     color: color.ink,
                     minWidth: 24,
                     textAlign: 'right',
@@ -62,7 +64,7 @@ export default function BarChart({ items = [], group = 'both', maxValue }) {
             </div>
           ) : (
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <div style={{ flex: 1, height: 12, background: color.line, borderRadius: 999, overflow: 'hidden' }}>
+              <div style={{ flex: 1, height: 10, background: color.line, borderRadius: 999, overflow: 'hidden' }}>
                 <div style={{
                   height: '100%',
                   width: visible ? `${(item.value / computedMax) * 100}%` : '0%',
@@ -74,6 +76,7 @@ export default function BarChart({ items = [], group = 'both', maxValue }) {
               <span style={{
                 fontFamily: font.family,
                 fontSize: type.caption.size,
+                fontWeight: type.caption.weight,
                 color: color.ink,
                 minWidth: 36,
                 textAlign: 'right',
@@ -86,14 +89,14 @@ export default function BarChart({ items = [], group = 'both', maxValue }) {
       ))}
 
       {group === 'both' && (
-        <div style={{ display: 'flex', gap: 20, marginTop: 4 }}>
+        <div style={{ display: 'flex', gap: 20, marginTop: 2 }}>
           {[
             { col: korColor,  label: '한국인' },
             { col: intlColor, label: '외국인' },
           ].map(({ col, label }) => (
             <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <div style={{ width: 10, height: 10, borderRadius: '50%', background: col }} />
-              <span style={{ fontFamily: font.family, fontSize: type.caption.size, color: color.inkMuted }}>
+              <div style={{ width: 8, height: 8, borderRadius: '50%', background: col }} />
+              <span style={{ fontFamily: font.family, fontSize: type.caption.size, fontWeight: type.caption.weight, color: color.inkMuted }}>
                 {label}
               </span>
             </div>

@@ -8,7 +8,7 @@ export default function QuoteCard({ quote, source, align = 'left' }) {
     <div
       ref={ref}
       style={{
-        borderLeft: '3px solid #7C3AED',
+        borderLeft: `3px solid ${color.primary}`,
         background: 'rgba(124,58,237,0.08)',
         borderRadius: '0 8px 8px 0',
         padding: '20px 24px',
@@ -34,11 +34,12 @@ export default function QuoteCard({ quote, source, align = 'left' }) {
           margin: '12px 0 0',
           fontFamily: font.family,
           fontSize: type.caption.size,
+          fontWeight: type.caption.weight,
           color: color.inkMuted,
           textAlign: 'right',
           fontStyle: 'normal',
         }}>
-          — {source}
+          · {source}
         </p>
       )}
     </div>

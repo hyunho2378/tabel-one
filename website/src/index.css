@@ -46,3 +46,9 @@ img {
 
   .t1-cjm-stages  { grid-template-columns: repeat(3, 1fr) !important; }
 }
+
+@media (max-width: 480px) {
+  .t1-grid-4      { grid-template-columns: 1fr !important; }
+  .t1-cjm-stages  { grid-template-columns: repeat(2, 1fr) !important; }
+  .t1-stats-bar > div { flex: 0 0 80% !important; }
+}

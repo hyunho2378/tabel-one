@@ -208,7 +208,7 @@ const blockStyle = (visible) => ({
   opacity: visible ? 1 : 0,
   transform: visible ? 'translateY(0)' : 'translateY(20px)',
   transition: 'opacity 0.6s ease, transform 0.6s ease',
-  marginBottom: 'clamp(48px, 6vw, 80px)',
+  marginBottom: 'clamp(28px, 3.5vw, 48px)',
 });
 
 const subsectionLabel = (text) => (
@@ -472,7 +472,7 @@ export default function TableOneSurvey() {
                 <div style={{
                   fontFamily: font.family,
                   fontSize: 'clamp(20px,2vw,28px)',
-                  fontWeight: 300,
+                  fontWeight: 500,
                   color: color.inkFaint,
                   paddingBottom: 20,
                 }}>
@@ -681,10 +681,10 @@ export default function TableOneSurvey() {
                       <div style={{ marginBottom: 6 }}>
                         <span style={{
                           background: color.primary,
-                          color: '#fff',
-                          fontSize: '10px',
+                          color: color.ink,
+                          fontSize: type.caption.size,
                           fontWeight: 700,
-                          padding: '2px 8px',
+                          padding: '3px 10px',
                           borderRadius: 999,
                           fontFamily: font.family,
                         }}>
@@ -738,7 +738,7 @@ export default function TableOneSurvey() {
                 key={col}
                 style={{
                   background: color.primary,
-                  color: '#ffffff',
+                  color: color.ink,
                   fontFamily: font.family,
                   fontSize: type.body.size,
                   fontWeight: 700,
