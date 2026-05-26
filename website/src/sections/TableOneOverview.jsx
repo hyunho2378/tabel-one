@@ -145,6 +145,7 @@ export default function TableOneOverview() {
                 margin: 0,
                 fontFamily: font.family,
                 fontSize: type.lead.size,
+                fontWeight: type.lead.weight,
                 lineHeight: type.lead.lh,
                 color: color.ink,
                 wordBreak: 'keep-all',

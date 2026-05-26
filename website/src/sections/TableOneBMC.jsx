@@ -46,6 +46,7 @@ function BulletList({ items, accentDot = false }) {
           <span style={{
             fontFamily: font.family,
             fontSize: type.body.size,
+            fontWeight: type.body.weight,
             color: color.inkMuted,
             lineHeight: 1.65,
             wordBreak: 'keep-all',
@@ -76,6 +77,7 @@ function SegmentBadge({ label, value }) {
       <span style={{
         fontFamily: font.family,
         fontSize: type.body.size,
+        fontWeight: type.body.weight,
         color: color.ink,
         lineHeight: 1.55,
         wordBreak: 'keep-all',
@@ -270,6 +272,7 @@ export default function TableOneBMC() {
                 <span style={{
                   fontFamily: font.family,
                   fontSize: type.body.size,
+                  fontWeight: type.body.weight,
                   color: color.inkMuted,
                   lineHeight: 1.65,
                   wordBreak: 'keep-all',

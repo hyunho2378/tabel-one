@@ -83,6 +83,7 @@ function PersonaCard({ p, visible, delay }) {
             <span style={{
               fontFamily: font.family,
               fontSize: type.body.size,
+              fontWeight: type.body.weight,
               color: color.ink,
               lineHeight: 1.6,
               wordBreak: 'keep-all',
@@ -120,6 +121,7 @@ function PersonaCard({ p, visible, delay }) {
               <span style={{
                 fontFamily: font.family,
                 fontSize: type.body.size,
+                fontWeight: type.body.weight,
                 color: color.inkMuted,
                 lineHeight: 1.65,
                 wordBreak: 'keep-all',
@@ -143,6 +145,7 @@ function PersonaCard({ p, visible, delay }) {
           margin: 0,
           fontFamily: font.family,
           fontSize: type.body.size,
+          fontWeight: type.body.weight,
           fontStyle: 'italic',
           color: color.ink,
           lineHeight: 1.7,

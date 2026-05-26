@@ -78,6 +78,7 @@ export default function TableOneInsights() {
               margin: 0,
               fontFamily: font.family,
               fontSize: type.body.size,
+              fontWeight: type.body.weight,
               color: color.inkMuted,
               lineHeight: 1.75,
               wordBreak: 'keep-all',

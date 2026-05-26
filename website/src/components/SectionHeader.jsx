@@ -24,6 +24,7 @@ export default function SectionHeader({ label, title, sub, align = 'left' }) {
         lineHeight: type.h1.lh,
         letterSpacing: type.h1.ls,
         color: color.ink,
+        wordBreak: 'keep-all',
       }}>
         {title}
       </h2>

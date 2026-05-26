@@ -107,7 +107,7 @@ function PercentPairCard({ eyebrow, korNum, korLabel, intlNum, intlLabel, unit, 
         <div style={{
           fontFamily: font.family,
           fontSize: 'clamp(20px,2vw,28px)',
-          fontWeight: 300,
+          fontWeight: 500,
           color: color.inkFaint,
           paddingBottom: 20,
         }}>

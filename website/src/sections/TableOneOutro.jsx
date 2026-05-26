@@ -72,6 +72,7 @@ export default function TableOneOutro() {
           margin: '0 0 40px',
           fontFamily: font.family,
           fontSize: type.lead.size,
+          fontWeight: type.lead.weight,
           color: color.inkMuted,
           lineHeight: type.lead.lh,
           wordBreak: 'keep-all',
@@ -91,6 +92,7 @@ export default function TableOneOutro() {
             margin: 0,
             fontFamily: font.family,
             fontSize: type.body.size,
+            fontWeight: type.body.weight,
             color: color.inkFaint,
           }}>
             {meta.team} · {meta.members.join(' / ')}
@@ -99,6 +101,7 @@ export default function TableOneOutro() {
             margin: 0,
             fontFamily: font.family,
             fontSize: type.body.size,
+            fontWeight: type.body.weight,
             color: color.inkFaint,
           }}>
             {meta.period} · {meta.professor}

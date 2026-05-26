@@ -96,6 +96,7 @@ function CJMRow({ cjm, visible, delay }) {
               margin: 0,
               fontFamily: font.family,
               fontSize: type.body.size,
+              fontWeight: type.body.weight,
               color: color.ink,
               lineHeight: 1.55,
               wordBreak: 'keep-all',
@@ -177,6 +178,7 @@ export default function TableOneAsIsCJM() {
             <span style={{
               fontFamily: font.family,
               fontSize: type.caption.size,
+              fontWeight: type.caption.weight,
               color: color.inkMuted,
             }}>
               {label}

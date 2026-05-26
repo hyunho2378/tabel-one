@@ -116,7 +116,7 @@ export default function TableOneHero() {
       id="hero"
       ref={ref}
       style={{
-        minHeight: '100vh',
+        minHeight: 'clamp(600px, 85vh, 900px)',
         background: color.bg,
         display: 'flex',
         flexDirection: 'column',
@@ -163,7 +163,6 @@ export default function TableOneHero() {
       {/* Headline */}
       <div style={{
         textAlign: 'center',
-        maxWidth: '860px',
         opacity: visible ? 1 : 0,
         transform: visible ? 'none' : 'translateY(-12px)',
         transition: 'opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s',
@@ -171,7 +170,7 @@ export default function TableOneHero() {
         <h1 style={{
           margin: '0 0 24px',
           fontFamily: font.family,
-          fontSize: 'clamp(30px, 5vw, 72px)',
+          fontSize: type.display.size,
           fontWeight: 800,
           lineHeight: 1.12,
           letterSpacing: '-0.04em',
@@ -184,6 +183,7 @@ export default function TableOneHero() {
           margin: 0,
           fontFamily: font.family,
           fontSize: type.lead.size,
+          fontWeight: type.lead.weight,
           lineHeight: type.lead.lh,
           color: color.inkMuted,
           wordBreak: 'keep-all',
@@ -197,8 +197,7 @@ export default function TableOneHero() {
         display: 'flex',
         alignItems: 'stretch',
         width: '100%',
-        maxWidth: '820px',
-        marginTop: 72,
+        marginTop: 64,
         opacity: visible ? 1 : 0,
         transition: 'opacity 0.6s ease 0.65s',
       }}>

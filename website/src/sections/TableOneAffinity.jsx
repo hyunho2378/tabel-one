@@ -86,6 +86,7 @@ export default function TableOneAffinity() {
                 margin: '0 0 14px',
                 fontFamily: font.family,
                 fontSize: type.body.size,
+                fontWeight: type.body.weight,
                 color: color.inkMuted,
                 lineHeight: 1.6,
               }}>
@@ -253,6 +254,7 @@ export default function TableOneAffinity() {
           margin: 'clamp(16px, 2vw, 24px) 0 0',
           fontFamily: font.family,
           fontSize: type.body.size,
+          fontWeight: type.body.weight,
           fontStyle: 'italic',
           color: color.inkMuted,
           textAlign: 'center',

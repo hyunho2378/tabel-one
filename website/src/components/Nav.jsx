@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { color, font, layout } from '../tokens/web.js';
+import { color, font, layout, type } from '../tokens/web.js';
 
 const LINKS = [
   { label: '개요',     href: '#overview'  },
@@ -35,7 +35,7 @@ export default function Nav() {
         style={{
           maxWidth: layout.container,
           margin: '0 auto',
-          padding: '0 clamp(20px, 5vw, 80px)',
+          padding: `0 ${layout.gut}`,
           height: 56,
           display: 'flex',
           alignItems: 'center',

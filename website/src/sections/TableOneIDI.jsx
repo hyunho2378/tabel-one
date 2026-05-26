@@ -123,7 +123,7 @@ export default function TableOneIDI() {
                   padding: '10px clamp(12px, 1.5vw, 20px)',
                   fontFamily: font.family,
                   fontSize: type.body.size,
-                  fontWeight: isActive ? 700 : 400,
+                  fontWeight: isActive ? 700 : 500,
                   color: isActive ? accentColor : color.inkMuted,
                   whiteSpace: 'nowrap',
                   transition: 'color 0.2s, border-color 0.2s',
@@ -153,6 +153,7 @@ export default function TableOneIDI() {
                   <span style={{
                     fontFamily: font.family,
                     fontSize: type.lead.size,
+                    fontWeight: type.lead.weight,
                     color: color.ink,
                     lineHeight: 1.65,
                     wordBreak: 'keep-all',
