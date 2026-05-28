@@ -6,6 +6,7 @@ import BarChart from '../components/BarChart.jsx';
 import DonutChart from '../components/DonutChart.jsx';
 import QuoteCard from '../components/QuoteCard.jsx';
 import researchData from '../data/userResearch.json';
+import tableOneData from '../data/tableOne.json';
 
 // ─── Module-level data prep ───────────────────────────────────────────────────
 
@@ -15,6 +16,7 @@ function parsePct(str) {
 }
 
 const { survey } = researchData;
+const { overview: tableOneOverview } = tableOneData;
 const sp = survey.sampleProfile;
 
 const korGenderSegs = Object.entries(sp.korean.gender).map(([label, val]) => ({ label, value: parsePct(val) }));
@@ -253,7 +255,7 @@ export default function TableOneSurvey() {
         <SectionHeader
           label="QUANTITATIVE SURVEY"
           title="설문조사 결과"
-          sub="n=64 (한국인 39 + 외국인 25) · 2026.03.30~04.06"
+          sub="응답자 64명 (한국인 39 + 외국인 25) · 2026.03.30~04.06"
         />
 
         {/* ── Block 1 — 표본 구성 ─────────────────────────────────────────── */}
@@ -724,6 +726,18 @@ export default function TableOneSurvey() {
         {/* ── Block 8 — Curb-Cut Effect ────────────────────────────────────── */}
         <div ref={b8Ref} style={blockStyle(b8Visible)}>
           {subsectionLabel(survey.curbCutEffect.label)}
+
+          <p style={{
+            margin: '0 0 20px',
+            fontFamily: font.family,
+            fontSize: type.body.size,
+            fontWeight: type.body.weight,
+            color: color.inkMuted,
+            lineHeight: type.body.lh,
+            wordBreak: 'keep-all',
+          }}>
+            {tableOneOverview.curbCutDefinition}
+          </p>
 
           <div style={{
             display: 'grid',

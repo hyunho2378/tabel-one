@@ -33,7 +33,7 @@ const INFO_ROWS = [
 
 const RIGHT_BLOCKS = [
   { label: 'THE PROBLEM',     text: overview.problem },
-  { label: 'OUR APPROACH',    text: overview.approach },
+  { label: 'OUR APPROACH',    text: overview.approach, note: overview.curbCutDefinition },
   { label: 'DIFFERENTIATION', text: overview.differentiation },
 ];
 
@@ -121,7 +121,7 @@ export default function TableOneOverview() {
             gap: 'clamp(24px, 3vw, 40px)',
           }}
         >
-          {RIGHT_BLOCKS.map(({ label, text }, i) => (
+          {RIGHT_BLOCKS.map(({ label, text, note }, i) => (
             <div
               key={label}
               style={{
@@ -142,7 +142,7 @@ export default function TableOneOverview() {
                 {label}
               </p>
               <p style={{
-                margin: 0,
+                margin: note ? '0 0 8px' : 0,
                 fontFamily: font.family,
                 fontSize: type.lead.size,
                 fontWeight: type.lead.weight,
@@ -152,6 +152,19 @@ export default function TableOneOverview() {
               }}>
                 {text}
               </p>
+              {note && (
+                <p style={{
+                  margin: 0,
+                  fontFamily: font.family,
+                  fontSize: type.body.size,
+                  fontWeight: type.body.weight,
+                  lineHeight: type.body.lh,
+                  color: color.inkMuted,
+                  wordBreak: 'keep-all',
+                }}>
+                  {note}
+                </p>
+              )}
             </div>
           ))}
         </div>

@@ -32,8 +32,8 @@ export default function TableOneIDI() {
     }}>
       <SectionHeader
         label="QUALITATIVE RESEARCH"
-        title="심층 인터뷰 IDI"
-        sub="n=4 (한국인 2 + 외국인 2) · 15~20분 행동 기반 질문"
+        title="심층 인터뷰"
+        sub="4명 (한국인 2 + 외국인 2) · 15~20분 행동 기반 질문"
       />
 
       {/* Participant cards 2×2 */}
