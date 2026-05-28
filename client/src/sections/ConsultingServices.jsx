@@ -17,7 +17,7 @@ function ServiceCard({ svc, visible, delay, expanded, onToggle }) {
         background: hovered ? 'rgba(124,58,237,0.08)' : 'rgba(255,255,255,0.04)',
         border: `1px solid ${hovered ? color.primary : 'rgba(255,255,255,0.08)'}`,
         borderRadius: layout.rMd,
-        padding: 'clamp(20px, 2.5vw, 32px)',
+        padding: 'clamp(12px, 1.5vw, 19px)',
         display: 'flex',
         flexDirection: 'column',
         gap: 14,

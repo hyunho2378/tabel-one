@@ -2,7 +2,7 @@ import { color, font, type } from '../tokens/web.js';
 
 export default function SectionHeader({ label, title, sub, align = 'left' }) {
   return (
-    <div style={{ textAlign: align, paddingBottom: 'clamp(32px, 4vw, 56px)' }}>
+    <div style={{ textAlign: align, paddingBottom: 'clamp(19px, 2.4vw, 34px)' }}>
       {label && (
         <p style={{
           margin: '0 0 12px',

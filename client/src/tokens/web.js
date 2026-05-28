@@ -29,13 +29,13 @@ export const type = {
   lead:    { size: 'clamp(13px,1.17vw,17px)',  lh: 1.75, weight: 400 },
   body:    { size: 'clamp(11px,0.9vw,13px)',   lh: 1.78, weight: 400 },
   caption: { size: 'clamp(10px,0.76vw,11px)',  lh: 1.55, weight: 500 },
-  eyebrow: { size: 'clamp(13px,1vw,16px)', weight: 800, ls: '0em', transform: 'uppercase' },
+  eyebrow: { size: 'clamp(17px,1.3vw,20px)', weight: 800, ls: '0em', transform: 'uppercase' },
 };
 
 export const layout = {
   container: '1440px',
-  gut:       'clamp(67px, 8.3vw, 133px)',
-  sectionY:  'clamp(83px, 10.4vw, 167px)',
+  gut:       'clamp(20px, 8.3vw, 133px)',
+  sectionY:  'clamp(40px, 5.5vw, 80px)',
   rLg: 'clamp(12px, 1.5vw, 24px)',
   rMd: 'clamp(8px, 1vw, 16px)',
   rSm: 'clamp(4px, 0.5vw, 8px)',

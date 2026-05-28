@@ -6,9 +6,13 @@ import data from '../data/consulting.json';
 
 const { demo } = data;
 
+// Floor plan reference dimensions (pixels) — SVG viewBox matches these
+const PW = 280;
+const PH = 212;
+
 const STATUS_BG = {
   occupied:  '#2A2A2A',
-  available: 'rgba(124,58,237,0.15)',
+  available: 'rgba(124,58,237,0.12)',
   selecting: '#7C3AED',
   confirmed: '#10B981',
 };
@@ -20,69 +24,140 @@ const STATUS_TEXT = {
 };
 const STATUS_BORDER = {
   occupied:  '1px solid rgba(255,255,255,0.06)',
-  available: '1px solid #7C3AED',
+  available: '1px solid rgba(124,58,237,0.45)',
   selecting: '1px solid #7C3AED',
   confirmed: '1px solid #10B981',
 };
 
-function SeatButton({ seat, onClick, interactive }) {
-  const isClickable = interactive && seat.status === 'available';
+function FloorPlan({ seats, onSeatClick, interactive }) {
   return (
-    <button
-      onClick={() => isClickable && onClick(seat.id)}
-      disabled={!isClickable}
-      style={{
-        background: STATUS_BG[seat.status],
-        border: STATUS_BORDER[seat.status],
-        borderRadius: 12,
-        padding: 'clamp(10px, 1.2vw, 16px) 4px',
-        cursor: isClickable ? 'pointer' : 'default',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: 5,
-        transition: 'background 0.4s ease, border-color 0.4s ease',
-        animation: seat.status === 'selecting' ? 'pulse 1.1s ease-in-out infinite' : 'none',
-        width: '100%',
-      }}
-    >
-      <span style={{
-        fontFamily: font.family,
-        fontSize: type.body.size,
-        fontWeight: 800,
-        color: STATUS_TEXT[seat.status],
-        lineHeight: 1,
-      }}>
-        {seat.label}
-      </span>
-      <span style={{
-        fontFamily: font.family,
-        fontSize: 9,
-        fontWeight: 500,
-        color: seat.status === 'available' ? color.primaryLight : STATUS_TEXT[seat.status],
-        opacity: seat.status === 'occupied' ? 0.5 : 1,
-      }}>
-        {demo.dashboard.statusLabels[seat.status]}
-      </span>
-    </button>
-  );
-}
+    <div style={{ position: 'relative', width: '100%' }}>
 
-function SeatGrid({ seats, onSeatClick, interactive }) {
-  return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)',
-      gap: 'clamp(6px, 0.8vw, 10px)',
-    }}>
-      {seats.map(seat => (
-        <SeatButton
-          key={seat.id}
-          seat={seat}
-          onClick={onSeatClick}
-          interactive={interactive}
-        />
-      ))}
+      {/* ── SVG background: walls, zones, labels ── */}
+      <svg
+        viewBox={`0 0 ${PW} ${PH}`}
+        width="100%"
+        style={{ display: 'block' }}
+        aria-hidden="true"
+      >
+        {/* Room border */}
+        <rect x="1" y="1" width={PW - 2} height={PH - 2}
+          fill="#161618" stroke="rgba(255,255,255,0.08)" strokeWidth="1" rx="4" />
+
+        {/* Kitchen strip — top-right corner */}
+        <rect x="184" y="0" width="96" height="7"
+          fill="rgba(255,255,255,0.04)" />
+        <text x="228" y="5.8" textAnchor="middle"
+          fill="rgba(255,255,255,0.22)" fontSize="6.5" fontWeight="700" letterSpacing="1.2"
+          fontFamily={font.family}>
+          주방
+        </text>
+
+        {/* 창가 파티션 zone label — above seat row */}
+        <text x="82" y="11" textAnchor="middle"
+          fill="rgba(255,255,255,0.18)" fontSize="6.5" fontWeight="600" letterSpacing="0.8"
+          fontFamily={font.family}>
+          창가 파티션 1인석
+        </text>
+
+        {/* Partition divider line — below window seats */}
+        <line x1="4" y1="73" x2="172" y2="73"
+          stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
+
+        {/* 2인석 zone label */}
+        <text x="9" y="89" fill="rgba(255,255,255,0.15)" fontSize="6.5" fontWeight="600"
+          letterSpacing="0.5" fontFamily={font.family}>
+          2인석
+        </text>
+
+        {/* 4인석 zone label — below the 4인석 block */}
+        <text x="228" y="109" textAnchor="middle"
+          fill="rgba(255,255,255,0.15)" fontSize="6.5" fontWeight="600"
+          letterSpacing="0.5" fontFamily={font.family}>
+          4인석
+        </text>
+
+        {/* 일반 1인석 zone label */}
+        <text x="9" y="160" fill="rgba(255,255,255,0.15)" fontSize="6.5" fontWeight="600"
+          letterSpacing="0.5" fontFamily={font.family}>
+          일반 1인석
+        </text>
+
+        {/* Entrance indicator — bottom-right dashed */}
+        <line x1="172" y1={PH - 1} x2={PW - 1} y2={PH - 1}
+          stroke="rgba(255,255,255,0.14)" strokeWidth="2" strokeDasharray="4,3" />
+        <text x="226" y={PH - 3} textAnchor="middle"
+          fill="rgba(255,255,255,0.22)" fontSize="6.5" fontWeight="600"
+          fontFamily={font.family}>
+          ← 입구
+        </text>
+      </svg>
+
+      {/* ── Seat buttons — absolutely positioned using % of PW×PH ── */}
+      {seats.map(seat => {
+        const isClickable = interactive && seat.status === 'available';
+        const isRec = !!seat.recommended && seat.status === 'available';
+        return (
+          <button
+            key={seat.id}
+            onClick={() => isClickable && onSeatClick(seat.id)}
+            disabled={!isClickable}
+            style={{
+              position: 'absolute',
+              left:   `${seat.x / PW * 100}%`,
+              top:    `${seat.y / PH * 100}%`,
+              width:  `${seat.w / PW * 100}%`,
+              height: `${seat.h / PH * 100}%`,
+              background: isRec ? 'rgba(124,58,237,0.22)' : STATUS_BG[seat.status],
+              border: isRec ? '2px solid #7C3AED' : STATUS_BORDER[seat.status],
+              borderRadius: 6,
+              cursor: isClickable ? 'pointer' : 'default',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 2,
+              padding: '2px 3px',
+              boxSizing: 'border-box',
+              overflow: 'hidden',
+              transition: 'background 0.4s ease, border-color 0.4s ease',
+              animation: seat.status === 'selecting' ? 'pulse 1.1s ease-in-out infinite' : 'none',
+            }}
+          >
+            <span style={{
+              fontFamily: font.family,
+              fontSize: 'clamp(7px, 0.75vw, 10px)',
+              fontWeight: 700,
+              color: STATUS_TEXT[seat.status],
+              lineHeight: 1,
+            }}>
+              {seat.label}
+            </span>
+
+            {isRec ? (
+              <span style={{
+                fontFamily: font.family,
+                fontSize: 'clamp(6px, 0.58vw, 8px)',
+                color: '#A78BFA',
+                fontWeight: 700,
+                lineHeight: 1,
+              }}>
+                ★ 추천
+              </span>
+            ) : (
+              <span style={{
+                fontFamily: font.family,
+                fontSize: 'clamp(6px, 0.58vw, 8px)',
+                color: seat.status === 'available' ? color.primaryLight : STATUS_TEXT[seat.status],
+                opacity: seat.status === 'occupied' ? 0.5 : 0.85,
+                lineHeight: 1,
+              }}>
+                {demo.dashboard.statusLabels[seat.status]}
+              </span>
+            )}
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -145,7 +220,7 @@ export default function ConsultingDemo() {
           border: '1px solid rgba(255,255,255,0.09)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 18,
+          gap: 16,
         }}>
           <div>
             <p style={{ margin: '0 0 3px', fontFamily: font.family, fontSize: type.h3.size, fontWeight: 700, color: color.ink }}>
@@ -198,8 +273,8 @@ export default function ConsultingDemo() {
             {demo.kiosk.selectPrompt}
           </p>
 
-          {/* Seat grid */}
-          <SeatGrid seats={seats} onSeatClick={handleSeatClick} interactive={true} />
+          {/* Floor plan — interactive */}
+          <FloorPlan seats={seats} onSeatClick={handleSeatClick} interactive={true} />
 
           {/* Confirm hint */}
           <p style={{
@@ -224,7 +299,7 @@ export default function ConsultingDemo() {
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
-          gap: 18,
+          gap: 16,
         }}>
           {/* Notification banner */}
           {notification && (
@@ -269,8 +344,8 @@ export default function ConsultingDemo() {
             ))}
           </div>
 
-          {/* Mirrored seat grid */}
-          <SeatGrid seats={seats} onSeatClick={() => {}} interactive={false} />
+          {/* Floor plan — mirrored, non-interactive */}
+          <FloorPlan seats={seats} onSeatClick={() => {}} interactive={false} />
         </div>
       </div>
     </section>

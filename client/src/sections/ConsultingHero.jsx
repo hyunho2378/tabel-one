@@ -8,7 +8,7 @@ const { hero } = data;
 function StatItem({ stat }) {
   const [ref, count] = useCountUp(stat.value);
   return (
-    <div ref={ref} style={{ textAlign: 'center', padding: 'clamp(20px, 2.5vw, 32px)' }}>
+    <div ref={ref} style={{ textAlign: 'center', padding: 'clamp(12px, 1.5vw, 19px)' }}>
       <div style={{
         fontFamily: font.family,
         fontSize: 'clamp(28px, 3.5vw, 52px)',
@@ -41,6 +41,134 @@ function StatItem({ stat }) {
   );
 }
 
+function SeatMap() {
+  return (
+    <div style={{
+      background: '#0D0D0D',
+      border: '1px solid rgba(124,58,237,0.25)',
+      borderRadius: 16,
+      overflow: 'hidden',
+      width: 'clamp(240px, 26vw, 360px)',
+      fontFamily: font.family,
+    }}>
+      {/* Header */}
+      <div style={{
+        padding: '10px 14px',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}>
+        <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+          1F 홀 · 좌석 배치도
+        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+          <div style={{ width: 6, height: 6, borderRadius: '50%', background: color.ok }} />
+          <span style={{ fontSize: 10, color: color.ok, fontWeight: 600 }}>실시간</span>
+        </div>
+      </div>
+
+      {/* SVG floor plan */}
+      <svg viewBox="0 0 280 228" width="100%" style={{ display: 'block' }}>
+
+        {/* ── 창가 파티션 1인석 ── */}
+        <text x="12" y="14" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>창가 파티션 1인석</text>
+        <line x1="12" y1="19" x2="268" y2="19" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
+
+        {/* W1 occupied */}
+        <rect x="12" y="24" width="40" height="44" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+        <circle cx="32" cy="41" r="3.5" fill="rgba(255,255,255,0.12)" />
+        <text x="32" y="62" textAnchor="middle" fill="rgba(255,255,255,0.18)" fontSize="8" fontFamily={font.family}>1</text>
+
+        {/* W2 available */}
+        <rect x="65" y="24" width="40" height="44" rx="6" fill="rgba(124,58,237,0.07)" stroke="rgba(124,58,237,0.38)" strokeWidth="1" />
+        <text x="85" y="62" textAnchor="middle" fill="rgba(255,255,255,0.3)" fontSize="8" fontFamily={font.family}>2</text>
+
+        {/* W3 RECOMMENDED */}
+        <rect x="118" y="22" width="44" height="48" rx="7" fill="rgba(124,58,237,0.2)" stroke="#7C3AED" strokeWidth="2" />
+        <text x="140" y="43" textAnchor="middle" fill="#A78BFA" fontSize="8.5" fontWeight="700" fontFamily={font.family}>추천</text>
+        <text x="140" y="57" textAnchor="middle" fill="#7C3AED" fontSize="12" fontWeight="800" fontFamily={font.family}>★ 3</text>
+
+        {/* W4 available */}
+        <rect x="175" y="24" width="40" height="44" rx="6" fill="rgba(124,58,237,0.07)" stroke="rgba(124,58,237,0.38)" strokeWidth="1" />
+        <text x="195" y="62" textAnchor="middle" fill="rgba(255,255,255,0.3)" fontSize="8" fontFamily={font.family}>4</text>
+
+        {/* W5 occupied */}
+        <rect x="228" y="24" width="40" height="44" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+        <circle cx="248" cy="41" r="3.5" fill="rgba(255,255,255,0.12)" />
+        <text x="248" y="62" textAnchor="middle" fill="rgba(255,255,255,0.18)" fontSize="8" fontFamily={font.family}>5</text>
+
+        {/* ── 구분 ── */}
+        <line x1="12" y1="78" x2="268" y2="78" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+
+        {/* ── 2인석 / 4인석 ── */}
+        <text x="12" y="91" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>2인석</text>
+        <text x="146" y="91" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>4인석</text>
+
+        {/* 2인석 frame + chairs */}
+        <rect x="12" y="96" width="114" height="60" rx="8" fill="rgba(124,58,237,0.04)" stroke="rgba(124,58,237,0.18)" strokeWidth="1" />
+        <rect x="20" y="104" width="44" height="42" rx="5" fill="rgba(124,58,237,0.09)" stroke="rgba(124,58,237,0.32)" strokeWidth="1" />
+        <text x="42" y="129" textAnchor="middle" fill="rgba(255,255,255,0.28)" fontSize="8" fontFamily={font.family}>6</text>
+        <rect x="70" y="104" width="44" height="42" rx="5" fill="rgba(124,58,237,0.09)" stroke="rgba(124,58,237,0.32)" strokeWidth="1" />
+        <text x="92" y="129" textAnchor="middle" fill="rgba(255,255,255,0.28)" fontSize="8" fontFamily={font.family}>7</text>
+
+        {/* 4인석 frame + chairs (2×2: top occupied / bottom available+occupied) */}
+        <rect x="140" y="96" width="128" height="60" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+        <rect x="148" y="103" width="50" height="20" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+        <circle cx="173" cy="113" r="2.5" fill="rgba(255,255,255,0.14)" />
+        <rect x="210" y="103" width="50" height="20" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+        <circle cx="235" cy="113" r="2.5" fill="rgba(255,255,255,0.14)" />
+        <rect x="148" y="130" width="50" height="20" rx="4" fill="rgba(124,58,237,0.1)" stroke="rgba(124,58,237,0.3)" strokeWidth="1" />
+        <text x="173" y="143" textAnchor="middle" fill="rgba(167,139,250,0.7)" fontSize="8" fontFamily={font.family}>10</text>
+        <rect x="210" y="130" width="50" height="20" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+        <circle cx="235" cy="140" r="2.5" fill="rgba(255,255,255,0.14)" />
+
+        {/* ── 구분 ── */}
+        <line x1="12" y1="166" x2="268" y2="166" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+
+        {/* ── 일반 1인석 · 2인석 ── */}
+        <text x="12" y="179" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>일반 1인석 · 2인석</text>
+
+        {/* F1 available */}
+        <rect x="12" y="185" width="40" height="36" rx="6" fill="rgba(124,58,237,0.07)" stroke="rgba(124,58,237,0.38)" strokeWidth="1" />
+        <text x="32" y="207" textAnchor="middle" fill="rgba(255,255,255,0.3)" fontSize="8" fontFamily={font.family}>11</text>
+
+        {/* F2 occupied */}
+        <rect x="59" y="185" width="40" height="36" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+        <circle cx="79" cy="198" r="3.5" fill="rgba(255,255,255,0.12)" />
+        <text x="79" y="214" textAnchor="middle" fill="rgba(255,255,255,0.18)" fontSize="8" fontFamily={font.family}>12</text>
+
+        {/* Bottom 2인석 frame + chairs */}
+        <rect x="110" y="185" width="158" height="36" rx="6" fill="rgba(124,58,237,0.04)" stroke="rgba(124,58,237,0.18)" strokeWidth="1" />
+        <rect x="118" y="193" width="60" height="20" rx="4" fill="rgba(124,58,237,0.09)" stroke="rgba(124,58,237,0.28)" strokeWidth="1" />
+        <text x="148" y="207" textAnchor="middle" fill="rgba(255,255,255,0.28)" fontSize="8" fontFamily={font.family}>13</text>
+        <rect x="200" y="193" width="60" height="20" rx="4" fill="rgba(124,58,237,0.09)" stroke="rgba(124,58,237,0.28)" strokeWidth="1" />
+        <text x="230" y="207" textAnchor="middle" fill="rgba(255,255,255,0.28)" fontSize="8" fontFamily={font.family}>14</text>
+      </svg>
+
+      {/* Legend */}
+      <div style={{
+        padding: '9px 14px',
+        borderTop: '1px solid rgba(255,255,255,0.05)',
+        display: 'flex',
+        gap: 14,
+        justifyContent: 'center',
+      }}>
+        {[
+          { bg: '#7C3AED', label: '추천' },
+          { bg: 'rgba(124,58,237,0.38)', label: '선택 가능' },
+          { bg: 'rgba(255,255,255,0.15)', label: '사용 중' },
+        ].map(({ bg, label }) => (
+          <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+            <div style={{ width: 10, height: 10, borderRadius: 3, background: bg, flexShrink: 0 }} />
+            <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', fontFamily: font.family }}>{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function ConsultingHero() {
   const [leftRef, leftVisible] = useReveal({ threshold: 0.05 });
 
@@ -57,7 +185,7 @@ export default function ConsultingHero() {
       <div style={{
         maxWidth: layout.container,
         margin: '0 auto',
-        padding: `clamp(60px, 7vw, 100px) ${layout.gut} clamp(48px, 5vw, 72px)`,
+        padding: `clamp(36px, 4.2vw, 60px) ${layout.gut} clamp(29px, 3vw, 43px)`,
         width: '100%',
         boxSizing: 'border-box',
       }}>
@@ -67,9 +195,9 @@ export default function ConsultingHero() {
           style={{
             display: 'grid',
             gridTemplateColumns: '60% 40%',
-            gap: 'clamp(40px, 5vw, 80px)',
+            gap: 'clamp(24px, 3vw, 48px)',
             alignItems: 'center',
-            marginBottom: 'clamp(48px, 6vw, 80px)',
+            marginBottom: 'clamp(29px, 3.6vw, 48px)',
           }}
         >
           {/* Left */}
@@ -98,6 +226,18 @@ export default function ConsultingHero() {
             }}>
               {hero.badge}
             </div>
+
+            {/* Slogan */}
+            <p style={{
+              margin: '0 0 12px',
+              fontFamily: font.family,
+              fontSize: type.lead.size,
+              fontWeight: 400,
+              color: color.inkMuted,
+              lineHeight: 1.5,
+            }}>
+              {hero.slogan}
+            </p>
 
             {/* Headline — \n → <br /> */}
             <h1 style={{
@@ -183,7 +323,7 @@ export default function ConsultingHero() {
             </div>
           </div>
 
-          {/* Right — 3D Object placeholder */}
+          {/* Right — Seat Map */}
           <div
             className="cx-hero-3d"
             style={{
@@ -192,15 +332,7 @@ export default function ConsultingHero() {
               justifyContent: 'center',
             }}
           >
-            {/* 테이블+파티션 3D 오브제 이미지 삽입 위치 */}
-            <div style={{
-              width: 'clamp(280px, 32vw, 460px)',
-              height: 'clamp(280px, 32vw, 460px)',
-              borderRadius: '50%',
-              background: 'radial-gradient(circle at 35% 35%, #A78BFA 0%, #7C3AED 45%, #4C1D95 85%, #1A0A3B 100%)',
-              opacity: 0.8,
-              filter: 'blur(1px)',
-            }} />
+            <SeatMap />
           </div>
         </div>
 

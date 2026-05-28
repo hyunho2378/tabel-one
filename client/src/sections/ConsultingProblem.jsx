@@ -1,14 +1,89 @@
 import { color, font, type, layout } from '../tokens/web.js';
 import { useReveal } from '../lib/useReveal.js';
 import SectionHeader from '../components/SectionHeader.jsx';
-import QuoteCard from '../components/QuoteCard.jsx';
 import data from '../data/consulting.json';
 
 const { problem } = data;
 
+function ClaimItem({ claim, i, visible }) {
+  return (
+    <div style={{
+      paddingTop: 'clamp(17px, 2.1vw, 29px)',
+      paddingBottom: 'clamp(17px, 2.1vw, 29px)',
+      borderBottom: i < problem.claims.length - 1 ? `1px solid ${color.line}` : 'none',
+      display: 'flex',
+      gap: 'clamp(20px, 3vw, 48px)',
+      alignItems: 'flex-start',
+      opacity: visible ? 1 : 0,
+      transform: visible ? 'none' : 'translateY(20px)',
+      transition: `opacity 0.65s ease ${i * 0.12}s, transform 0.65s ease ${i * 0.12}s`,
+    }}>
+      {/* Number */}
+      <span style={{
+        fontFamily: font.family,
+        fontSize: 'clamp(11px, 1vw, 13px)',
+        fontWeight: 700,
+        color: color.inkFaint,
+        letterSpacing: '0.08em',
+        flexShrink: 0,
+        paddingTop: 5,
+        minWidth: '2ch',
+      }}>
+        {String(i + 1).padStart(2, '0')}
+      </span>
+
+      {/* Content */}
+      <div style={{ flex: 1 }}>
+        {/* Claim */}
+        <p style={{
+          margin: '0 0 clamp(12px, 1.5vw, 18px)',
+          fontFamily: font.family,
+          fontSize: 'clamp(18px, 2.2vw, 32px)',
+          fontWeight: 700,
+          color: color.ink,
+          lineHeight: 1.3,
+          letterSpacing: '-0.02em',
+          wordBreak: 'keep-all',
+        }}>
+          {claim.claim}
+        </p>
+
+        {/* Evidence */}
+        <div style={{
+          borderLeft: `2px solid ${color.primary}`,
+          paddingLeft: 'clamp(12px, 1.5vw, 20px)',
+          marginBottom: 10,
+        }}>
+          <p style={{
+            margin: 0,
+            fontFamily: font.family,
+            fontSize: type.lead.size,
+            color: color.inkMuted,
+            lineHeight: 1.75,
+            wordBreak: 'keep-all',
+          }}>
+            {claim.evidence}
+          </p>
+        </div>
+
+        {/* Source */}
+        <p style={{
+          margin: 0,
+          fontFamily: font.family,
+          fontSize: 10,
+          color: color.inkFaint,
+          lineHeight: 1.5,
+        }}>
+          {claim.source}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function ConsultingProblem() {
-  const [cardsRef, cardsVisible] = useReveal({ threshold: 0.08 });
-  const [insightRef, insightVisible] = useReveal({ threshold: 0.2 });
+  const [listRef, listVisible] = useReveal({ threshold: 0.06 });
+  const [closingRef, closingVisible] = useReveal({ threshold: 0.2 });
 
   return (
     <section id="problem" style={{
@@ -24,85 +99,38 @@ export default function ConsultingProblem() {
         sub={problem.sub}
       />
 
-      {/* Facts 2×2 grid */}
-      <div
-        ref={cardsRef}
-        className="cx-grid-2"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: 'clamp(12px, 1.5vw, 20px)',
-          marginBottom: 'clamp(32px, 4vw, 56px)',
-        }}
-      >
-        {problem.facts.map((fact, i) => (
-          <div
-            key={fact.no}
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: layout.rMd,
-              padding: 'clamp(20px, 2.5vw, 32px)',
-              opacity: cardsVisible ? 1 : 0,
-              transform: cardsVisible ? 'none' : 'translateY(16px)',
-              transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`,
-            }}
-          >
-            <div style={{
-              fontFamily: font.family,
-              fontSize: 'clamp(18px, 1.8vw, 26px)',
-              fontWeight: 800,
-              color: color.primary,
-              opacity: 0.5,
-              lineHeight: 1,
-              marginBottom: 12,
-            }}>
-              {fact.no}
-            </div>
-            <div style={{
-              fontFamily: font.family,
-              fontSize: 'clamp(26px, 3.2vw, 48px)',
-              fontWeight: 800,
-              color: color.ink,
-              lineHeight: 1.05,
-              letterSpacing: '-0.03em',
-              marginBottom: 14,
-            }}>
-              {fact.stat}
-            </div>
-            <p style={{
-              margin: '0 0 10px',
-              fontFamily: font.family,
-              fontSize: type.body.size,
-              color: color.inkMuted,
-              lineHeight: 1.72,
-              wordBreak: 'keep-all',
-            }}>
-              {fact.desc}
-            </p>
-            <p style={{
-              margin: 0,
-              fontFamily: font.family,
-              fontSize: 10,
-              color: color.inkFaint,
-              lineHeight: 1.5,
-            }}>
-              {fact.source}
-            </p>
-          </div>
+      {/* Claims list */}
+      <div ref={listRef}>
+        {problem.claims.map((claim, i) => (
+          <ClaimItem key={claim.id} claim={claim} i={i} visible={listVisible} />
         ))}
       </div>
 
-      {/* Insight banner */}
+      {/* Closing */}
       <div
-        ref={insightRef}
+        ref={closingRef}
         style={{
-          opacity: insightVisible ? 1 : 0,
-          transform: insightVisible ? 'none' : 'translateX(-16px)',
-          transition: 'opacity 0.55s ease, transform 0.55s ease',
+          marginTop: 'clamp(19px, 2.4vw, 34px)',
+          borderLeft: `4px solid ${color.primary}`,
+          background: 'rgba(124,58,237,0.06)',
+          borderRadius: '0 8px 8px 0',
+          padding: 'clamp(12px, 1.5vw, 19px)',
+          opacity: closingVisible ? 1 : 0,
+          transform: closingVisible ? 'none' : 'translateX(-16px)',
+          transition: 'opacity 0.6s ease, transform 0.6s ease',
         }}
       >
-        <QuoteCard quote={problem.insight} />
+        <p style={{
+          margin: 0,
+          fontFamily: font.family,
+          fontSize: 'clamp(15px, 1.5vw, 22px)',
+          fontWeight: 600,
+          color: color.ink,
+          lineHeight: 1.65,
+          wordBreak: 'keep-all',
+        }}>
+          {problem.closing}
+        </p>
       </div>
     </section>
   );

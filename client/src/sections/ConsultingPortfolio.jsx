@@ -40,7 +40,7 @@ export default function ConsultingPortfolio() {
           <div style={{
             background: 'rgba(124,58,237,0.08)',
             borderBottom: '1px solid rgba(124,58,237,0.2)',
-            padding: 'clamp(20px, 2.5vw, 32px)',
+            padding: 'clamp(12px, 1.5vw, 19px)',
             display: 'flex',
             flexWrap: 'wrap',
             gap: '6px 24px',
@@ -56,15 +56,15 @@ export default function ConsultingPortfolio() {
             ))}
           </div>
 
-          <div style={{ padding: 'clamp(24px, 3vw, 44px)' }}>
+          <div style={{ padding: 'clamp(14px, 1.8vw, 26px)' }}>
 
             {/* Challenge */}
             <div style={{
               borderLeft: `3px solid ${color.primary}`,
               background: 'rgba(124,58,237,0.07)',
               borderRadius: '0 8px 8px 0',
-              padding: 'clamp(16px, 2vw, 24px)',
-              marginBottom: 'clamp(24px, 3vw, 36px)',
+              padding: 'clamp(10px, 1.2vw, 14px)',
+              marginBottom: 'clamp(14px, 1.8vw, 22px)',
             }}>
               <p style={{
                 margin: '0 0 7px',
@@ -95,8 +95,8 @@ export default function ConsultingPortfolio() {
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: 'clamp(16px, 2vw, 28px)',
-                marginBottom: 'clamp(24px, 3vw, 36px)',
+                gap: 'clamp(10px, 1.2vw, 17px)',
+                marginBottom: 'clamp(14px, 1.8vw, 22px)',
               }}
             >
               <div>
@@ -154,8 +154,8 @@ export default function ConsultingPortfolio() {
               background: 'rgba(124,58,237,0.1)',
               border: '1px solid rgba(124,58,237,0.3)',
               borderRadius: layout.rMd,
-              padding: 'clamp(16px, 2vw, 24px)',
-              marginBottom: 'clamp(24px, 3vw, 36px)',
+              padding: 'clamp(10px, 1.2vw, 14px)',
+              marginBottom: 'clamp(14px, 1.8vw, 22px)',
             }}>
               <p style={{
                 margin: '0 0 7px',
@@ -187,8 +187,8 @@ export default function ConsultingPortfolio() {
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: 'clamp(12px, 1.5vw, 20px)',
-                marginBottom: 'clamp(20px, 2.5vw, 32px)',
+                gap: 'clamp(7px, 0.9vw, 12px)',
+                marginBottom: 'clamp(12px, 1.5vw, 19px)',
               }}
             >
               {/* Before */}

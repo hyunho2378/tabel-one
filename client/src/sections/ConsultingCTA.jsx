@@ -33,7 +33,7 @@ export default function ConsultingCTA() {
         style={{
           display: 'flex',
           alignItems: 'flex-start',
-          marginBottom: 'clamp(48px, 6vw, 80px)',
+          marginBottom: 'clamp(29px, 3.6vw, 48px)',
           opacity: processVisible ? 1 : 0,
           transform: processVisible ? 'none' : 'translateY(16px)',
           transition: 'opacity 0.65s ease, transform 0.65s ease',
@@ -41,7 +41,7 @@ export default function ConsultingCTA() {
       >
         {cta.items.flatMap((item, i) => {
           const step = (
-            <div key={item.title} style={{ flex: 1, textAlign: 'center', padding: 'clamp(16px, 2.5vw, 32px)' }}>
+            <div key={item.title} style={{ flex: 1, textAlign: 'center', padding: 'clamp(10px, 1.5vw, 19px)' }}>
               <div style={{
                 width: 56,
                 height: 56,
@@ -106,7 +106,7 @@ export default function ConsultingCTA() {
           justifyContent: 'center',
           gap: 20,
           flexWrap: 'wrap',
-          marginBottom: 'clamp(48px, 6vw, 80px)',
+          marginBottom: 'clamp(29px, 3.6vw, 48px)',
           opacity: btnVisible ? 1 : 0,
           transform: btnVisible ? 'none' : 'translateY(16px)',
           transition: 'opacity 0.65s ease, transform 0.65s ease',
@@ -149,7 +149,7 @@ export default function ConsultingCTA() {
       <div style={{
         textAlign: 'center',
         borderTop: `1px solid ${color.line}`,
-        paddingTop: 'clamp(24px, 3vw, 40px)',
+        paddingTop: 'clamp(14px, 1.8vw, 24px)',
       }}>
         <p style={{
           margin: '0 0 8px',
