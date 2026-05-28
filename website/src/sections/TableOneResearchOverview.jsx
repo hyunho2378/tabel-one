@@ -40,7 +40,7 @@ export default function TableOneResearchOverview() {
         <SectionHeader
           label="RESEARCH"
           title="어떻게 조사했나"
-          sub="정량 설문 · 심층 인터뷰 · 서비스 사파리 — 3가지 방법론"
+          sub="정량 설문, 심층 인터뷰, 서비스 사파리 세 가지 방법론을 활용했습니다."
         />
 
         {/* 5W1H Grid */}
@@ -51,7 +51,7 @@ export default function TableOneResearchOverview() {
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: 'clamp(12px, 1.5vw, 20px)',
-            marginBottom: 'clamp(32px, 4vw, 48px)',
+            marginBottom: 'clamp(20px, 2.4vw, 29px)',
           }}
         >
           {w1hEntries.map((entry, i) => (

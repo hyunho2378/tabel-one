@@ -9,18 +9,17 @@ const CRITICAL_NO = 3;
 const POSITIVE_NO = 7;
 
 const META_ITEMS = [
-  { label: '장소',       value: safari.location },
-  { label: '페르소나',   value: safari.persona },
-  { label: '관찰 항목',  value: `총 ${safari.findings.length}개 발견 사항` },
+  { label: '장소',         value: safari.location },
+  { label: '참여자 특성',  value: '외국인 교환학생, 채식주의자, 첫 방문, 한국인 재학생과 함께 방문' },
+  { label: '관찰 항목',   value: `총 ${safari.findings.length}개 발견 사항` },
 ];
 
 export default function TableOneServiceSafari() {
   const [cardsRef, cardsVisible] = useReveal({ threshold: 0.08 });
-  const [insightRef, insightVisible] = useReveal({ threshold: 0.2 });
 
   return (
     <section id="safari" style={{
-      background: '#111111',
+      background: color.bg,
       padding: `${layout.sectionY} ${layout.gut}`,
       maxWidth: layout.container,
       margin: '0 auto',
@@ -29,7 +28,7 @@ export default function TableOneServiceSafari() {
       <SectionHeader
         label="SERVICE SAFARI"
         title="서비스 사파리"
-        sub={`장소: ${safari.location} · 페르소나: ${safari.persona}`}
+        sub={`춘천 현장을 직접 체험하며 총 ${safari.findings.length}개 발견 사항을 기록했습니다.`}
       />
 
       {/* Meta info bar */}
@@ -67,8 +66,9 @@ export default function TableOneServiceSafari() {
               margin: 0,
               fontFamily: font.family,
               fontSize: type.body.size,
+              fontWeight: type.body.weight,
               color: color.ink,
-              lineHeight: 1.55,
+              lineHeight: type.body.lh,
               wordBreak: 'keep-all',
             }}>
               {item.value}
@@ -174,8 +174,9 @@ export default function TableOneServiceSafari() {
                 margin: 0,
                 fontFamily: font.family,
                 fontSize: type.caption.size,
+                fontWeight: type.caption.weight,
                 color: color.inkMuted,
-                lineHeight: 1.6,
+                lineHeight: type.caption.lh,
                 wordBreak: 'keep-all',
                 marginTop: 'auto',
               }}>
@@ -186,42 +187,6 @@ export default function TableOneServiceSafari() {
         })}
       </div>
 
-      {/* Safari insight banner */}
-      <div
-        ref={insightRef}
-        style={{
-          borderLeft: `3px solid ${color.primary}`,
-          background: 'rgba(124,58,237,0.08)',
-          borderRadius: '0 8px 8px 0',
-          padding: 'clamp(20px, 2.5vw, 32px)',
-          opacity: insightVisible ? 1 : 0,
-          transform: insightVisible ? 'none' : 'translateX(-16px)',
-          transition: 'opacity 0.55s ease, transform 0.55s ease',
-        }}
-      >
-        <p style={{
-          margin: '0 0 12px',
-          fontFamily: font.family,
-          fontSize: type.caption.size,
-          fontWeight: 800,
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          color: color.primary,
-        }}>
-          SAFARI INSIGHT
-        </p>
-        <p style={{
-          margin: 0,
-          fontFamily: font.family,
-          fontSize: type.lead.size,
-          fontStyle: 'italic',
-          color: color.ink,
-          lineHeight: type.lead.lh,
-          wordBreak: 'keep-all',
-        }}>
-          "{safari.insight}"
-        </p>
-      </div>
     </section>
   );
 }

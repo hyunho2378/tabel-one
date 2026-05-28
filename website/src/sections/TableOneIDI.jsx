@@ -1,26 +1,33 @@
-import { useState } from 'react';
+import { color, layout } from '../tokens/web.js';
 import { useReveal } from '../lib/useReveal.js';
-import { color, font, type, layout } from '../tokens/web.js';
 import SectionHeader from '../components/SectionHeader.jsx';
+import QuoteCard from '../components/QuoteCard.jsx';
 import researchData from '../data/userResearch.json';
 
 const { interview } = researchData;
 
-const ALL_PARTICIPANTS = [
-  ...interview.koreanParticipants.map(p => ({ ...p, group: 'korean' })),
-  ...interview.internationalParticipants.map(p => ({ ...p, group: 'international' })),
+// 자리·시선 관련 발화만 선별 — JSON keyBehaviors 인덱스 직접 참조
+const QUOTES = [
+  {
+    text:   interview.koreanParticipants[0].keyBehaviors[2],
+    source: '한국인 참여자 A',
+  },
+  {
+    text:   interview.koreanParticipants[1].keyBehaviors[1],
+    source: '한국인 참여자 B',
+  },
+  {
+    text:   interview.internationalParticipants[0].keyBehaviors[0],
+    source: '외국인 참여자 C',
+  },
+  {
+    text:   interview.internationalParticipants[1].keyBehaviors[0],
+    source: '외국인 참여자 D',
+  },
 ];
 
-function shortPattern(pattern) {
-  return pattern.split(' (')[0];
-}
-
 export default function TableOneIDI() {
-  const [activeTab, setActiveTab] = useState('A');
-  const [cardsRef, cardsVisible] = useReveal({ threshold: 0.1 });
-  const [goldenRef, goldenVisible] = useReveal({ threshold: 0.2 });
-
-  const active = ALL_PARTICIPANTS.find(p => p.id === activeTab);
+  const [listRef, listVisible] = useReveal({ threshold: 0.05 });
 
   return (
     <section id="idi" style={{
@@ -33,176 +40,29 @@ export default function TableOneIDI() {
       <SectionHeader
         label="QUALITATIVE RESEARCH"
         title="심층 인터뷰"
-        sub="4명 (한국인 2 + 외국인 2) · 15~20분 행동 기반 질문"
+        sub="총 4명 (한국인 2, 외국인 2), 15~20분 행동 기반 질문으로 진행했습니다."
       />
 
-      {/* Participant cards 2×2 */}
       <div
-        ref={cardsRef}
-        className="t1-grid-2"
+        ref={listRef}
         style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 'clamp(12px, 1.5vw, 20px)',
-          marginBottom: 'clamp(32px, 4vw, 48px)',
-        }}
-      >
-        {ALL_PARTICIPANTS.map((p, i) => {
-          const accentColor = p.group === 'korean' ? color.primary : color.primaryLight;
-          return (
-            <div
-              key={p.id}
-              style={{
-                background: 'rgba(255,255,255,0.04)',
-                borderRadius: layout.rMd,
-                borderLeft: `3px solid ${accentColor}`,
-                padding: 'clamp(16px, 2vw, 24px)',
-                opacity: cardsVisible ? 1 : 0,
-                transform: cardsVisible ? 'none' : 'translateY(16px)',
-                transition: `opacity 0.55s ease ${i * 0.1}s, transform 0.55s ease ${i * 0.1}s`,
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 8 }}>
-                <span style={{
-                  fontFamily: font.family,
-                  fontSize: 'clamp(22px, 2.8vw, 36px)',
-                  fontWeight: 800,
-                  color: accentColor,
-                  lineHeight: 1,
-                }}>
-                  {p.id}
-                </span>
-                <span style={{
-                  fontFamily: font.family,
-                  fontSize: type.caption.size,
-                  fontWeight: 700,
-                  color: accentColor,
-                }}>
-                  {p.group === 'korean' ? '한국인' : '외국인'}
-                </span>
-              </div>
-              <p style={{
-                margin: 0,
-                fontFamily: font.family,
-                fontSize: type.body.size,
-                fontWeight: 600,
-                color: color.ink,
-                lineHeight: 1.55,
-                wordBreak: 'keep-all',
-              }}>
-                {p.pattern}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Tab + behavior list */}
-      <div style={{ marginBottom: 'clamp(32px, 4vw, 56px)' }}>
-        {/* Tab bar */}
-        <div style={{
           display: 'flex',
-          borderBottom: `1px solid ${color.line}`,
-          marginBottom: 28,
-          gap: 0,
-          flexWrap: 'wrap',
-        }}>
-          {ALL_PARTICIPANTS.map(p => {
-            const isActive = activeTab === p.id;
-            const accentColor = p.group === 'korean' ? color.primary : color.primaryLight;
-            return (
-              <button
-                key={p.id}
-                onClick={() => setActiveTab(p.id)}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  borderBottom: `2px solid ${isActive ? accentColor : 'transparent'}`,
-                  marginBottom: -1,
-                  cursor: 'pointer',
-                  padding: '10px clamp(12px, 1.5vw, 20px)',
-                  fontFamily: font.family,
-                  fontSize: type.body.size,
-                  fontWeight: isActive ? 700 : 500,
-                  color: isActive ? accentColor : color.inkMuted,
-                  whiteSpace: 'nowrap',
-                  transition: 'color 0.2s, border-color 0.2s',
-                }}
-              >
-                {p.id} · {shortPattern(p.pattern)}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Behavior list */}
-        {active && (
-          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {active.keyBehaviors.map((behavior, i) => {
-              const dotColor = active.group === 'korean' ? color.primary : color.primaryLight;
-              return (
-                <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <div style={{
-                    width: 7,
-                    height: 7,
-                    borderRadius: '50%',
-                    background: dotColor,
-                    marginTop: 6,
-                    flexShrink: 0,
-                  }} />
-                  <span style={{
-                    fontFamily: font.family,
-                    fontSize: type.lead.size,
-                    fontWeight: type.lead.weight,
-                    color: color.ink,
-                    lineHeight: 1.65,
-                    wordBreak: 'keep-all',
-                  }}>
-                    {behavior}
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </div>
-
-      {/* Golden Insight banner */}
-      <div
-        ref={goldenRef}
-        style={{
-          background: 'rgba(124,58,237,0.08)',
-          border: '1px solid rgba(124,58,237,0.3)',
-          borderRadius: layout.rLg,
-          padding: 'clamp(24px, 3vw, 40px)',
-          textAlign: 'center',
-          opacity: goldenVisible ? 1 : 0,
-          transform: goldenVisible ? 'none' : 'translateY(20px)',
-          transition: 'opacity 0.65s ease, transform 0.65s ease',
+          flexDirection: 'column',
+          gap: 'clamp(12px,1.5vw,20px)',
         }}
       >
-        <p style={{
-          margin: '0 0 16px',
-          fontFamily: font.family,
-          fontSize: type.caption.size,
-          fontWeight: 800,
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          color: color.primary,
-        }}>
-          GOLDEN INSIGHT
-        </p>
-        <p style={{
-          margin: '0 auto',
-          maxWidth: '740px',
-          fontFamily: font.family,
-          fontSize: type.lead.size,
-          lineHeight: type.lead.lh,
-          color: color.ink,
-          wordBreak: 'keep-all',
-        }}>
-          {interview.goldenInsight}
-        </p>
+        {QUOTES.map((item, i) => (
+          <div
+            key={i}
+            style={{
+              opacity:    listVisible ? 1 : 0,
+              transform:  listVisible ? 'translateY(0)' : 'translateY(16px)',
+              transition: `opacity 0.55s ease ${i * 0.1}s, transform 0.55s ease ${i * 0.1}s`,
+            }}
+          >
+            <QuoteCard quote={item.text} source={item.source} />
+          </div>
+        ))}
       </div>
     </section>
   );

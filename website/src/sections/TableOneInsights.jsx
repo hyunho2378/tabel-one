@@ -10,7 +10,7 @@ export default function TableOneInsights() {
 
   return (
     <section id="insights" style={{
-      background: '#111111',
+      background: color.bg,
       padding: `${layout.sectionY} ${layout.gut}`,
       maxWidth: layout.container,
       margin: '0 auto',
@@ -19,7 +19,7 @@ export default function TableOneInsights() {
       <SectionHeader
         label="KEY INSIGHTS"
         title="핵심 인사이트"
-        sub="리서치 전반에서 수렴된 세 가지 핵심 발견 — 문제의 본질을 정의한다"
+        sub="리서치 전반에서 수렴된 세 가지 핵심 발견으로 문제의 본질을 정의했습니다."
       />
 
       <div
@@ -80,7 +80,7 @@ export default function TableOneInsights() {
               fontSize: type.body.size,
               fontWeight: type.body.weight,
               color: color.inkMuted,
-              lineHeight: 1.75,
+              lineHeight: type.body.lh,
               wordBreak: 'keep-all',
               flexGrow: 1,
             }}>

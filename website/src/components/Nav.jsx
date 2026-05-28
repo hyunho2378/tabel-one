@@ -4,12 +4,6 @@ import { color, font, layout } from '../tokens/web.js';
 const LINKS = [
   { label: '개요',     href: '#overview'  },
   { label: '리서치',   href: '#research'  },
-  { label: '설문',     href: '#survey'    },
-  { label: 'IDI',      href: '#idi'       },
-  { label: '사파리',   href: '#safari'    },
-  { label: '어피니티', href: '#affinity'  },
-  { label: '페르소나', href: '#persona'   },
-  { label: 'CJM',      href: '#cjm'       },
   { label: '인사이트', href: '#insights'  },
   { label: '전략',     href: '#strategy'  },
   { label: 'BMC',      href: '#bmc'       },

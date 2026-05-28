@@ -21,7 +21,7 @@ export default function TableOneStrategyShift() {
       <SectionHeader
         label="STRATEGY SHIFT"
         title="전략 전환"
-        sub="리서치가 증명한 것 — 앱만으로는 물리적 장벽을 해결할 수 없다"
+        sub="리서치가 증명했습니다. 앱만으로는 물리적 장벽을 해결할 수 없습니다."
       />
 
       {/* Before / After pivot */}
@@ -33,7 +33,7 @@ export default function TableOneStrategyShift() {
           gridTemplateColumns: '1fr auto 1fr',
           gap: 'clamp(16px, 2vw, 28px)',
           alignItems: 'center',
-          marginBottom: 'clamp(40px, 5vw, 72px)',
+          marginBottom: 'clamp(24px, 3vw, 44px)',
           opacity: pivotVisible ? 1 : 0,
           transform: pivotVisible ? 'none' : 'translateY(20px)',
           transition: 'opacity 0.65s ease, transform 0.65s ease',
@@ -97,8 +97,8 @@ export default function TableOneStrategyShift() {
 
         {/* After */}
         <div style={{
-          background: 'rgba(124,58,237,0.08)',
-          border: '1px solid rgba(124,58,237,0.35)',
+          background: 'rgba(124,58,237,0.06)',
+          border: '1px solid rgba(124,58,237,0.15)',
           borderRadius: layout.rLg,
           padding: 'clamp(24px, 3vw, 40px)',
           textAlign: 'center',
@@ -130,9 +130,9 @@ export default function TableOneStrategyShift() {
 
       {/* Reason */}
       <div style={{
-        borderLeft: `3px solid ${color.primary}`,
         background: 'rgba(124,58,237,0.06)',
-        borderRadius: '0 8px 8px 0',
+        border: '1px solid rgba(124,58,237,0.15)',
+        borderRadius: layout.rMd,
         padding: 'clamp(16px, 2vw, 24px)',
         marginBottom: 'clamp(40px, 5vw, 72px)',
         opacity: pivotVisible ? 1 : 0,
@@ -171,7 +171,7 @@ export default function TableOneStrategyShift() {
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: 'clamp(12px, 1.5vw, 20px)',
-          marginBottom: 'clamp(40px, 5vw, 72px)',
+          marginBottom: 'clamp(24px, 3vw, 44px)',
         }}
       >
         {strategyShift.shifts.map((shift, i) => (
@@ -248,11 +248,11 @@ export default function TableOneStrategyShift() {
         <p style={{
           margin: 0,
           fontFamily: font.family,
-          fontSize: 'clamp(18px, 2.2vw, 32px)',
-          fontWeight: 700,
+          fontSize: type.h2.size,
+          fontWeight: type.h2.weight,
           color: color.primary,
-          lineHeight: 1.4,
-          letterSpacing: '-0.02em',
+          lineHeight: type.h2.lh,
+          letterSpacing: type.h2.ls,
         }}>
           "{strategyShift.cxValue}"
         </p>

@@ -8,8 +8,8 @@ const { bmc } = tableData;
 function BMCBlock({ label, children, accent = false, style: extraStyle = {} }) {
   return (
     <div style={{
-      background: accent ? 'rgba(124,58,237,0.08)' : 'rgba(255,255,255,0.03)',
-      border: `1px solid ${accent ? 'rgba(124,58,237,0.3)' : 'rgba(255,255,255,0.07)'}`,
+      background: accent ? 'rgba(124,58,237,0.06)' : 'rgba(255,255,255,0.04)',
+      border: `1px solid ${accent ? 'rgba(124,58,237,0.15)' : 'rgba(255,255,255,0.08)'}`,
       borderRadius: layout.rMd,
       padding: 'clamp(16px, 2vw, 24px)',
       ...extraStyle,
@@ -106,7 +106,7 @@ export default function TableOneBMC() {
 
   return (
     <section id="bmc" style={{
-      background: '#111111',
+      background: color.bg,
       padding: `${layout.sectionY} ${layout.gut}`,
       maxWidth: layout.container,
       margin: '0 auto',
@@ -115,7 +115,7 @@ export default function TableOneBMC() {
       <SectionHeader
         label="BUSINESS MODEL CANVAS"
         title="비즈니스 모델"
-        sub="B2C + B2B 이중 구조 — 혼밥러의 경험을 개선하면서 식당 사장님에게 지속 수익을 만든다"
+        sub="B2C + B2B 이중 구조로 혼밥러의 경험을 개선하면서 식당 사장님에게 지속 수익을 만듭니다."
       />
 
       {/* Top 5-column BMC row */}

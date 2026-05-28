@@ -2,6 +2,18 @@
 
 ## 컬러 토큰
 
+### Violet (전시 포스터 추출색 — 실제 사용 팔레트)
+
+| 토큰 | 값 | 용도 |
+|---|---|---|
+| `primary` | `#7C3AED` | CTA 버튼, 강조 포인트, 기본 보라 (기존 유지) |
+| `violetDeep` | `#7A3FC7` | 큰 면적 강조, 블러 글로우, 어두운 보라 배경 |
+| `violetSoft` | `#8A82F6` | 연보라 강조, 그라데이션 끝점, 보조 라벨, 아이콘 |
+| `violetMid` | `#967AE0` | 도트 패턴, 미세 장식, 중간 톤 포인트 |
+
+**그라데이션 토큰:** `gradient.violet = linear-gradient(135deg, #7C3AED, #8A82F6)`
+→ 히어로 배경 강조, 버튼 hover, 섹션 accent 영역에 사용 가능
+
 ### Primary (Orange Brand)
 
 | 토큰 | 값 | 용도 |

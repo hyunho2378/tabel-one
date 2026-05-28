@@ -29,7 +29,7 @@ export default function TableOneAffinity() {
       <SectionHeader
         label="LATENT NEEDS"
         title="잠재 니즈 분석"
-        sub="두 CJM의 감정 낙차 지점에서 도출한 잠재 니즈를 어피니티로 묶었다"
+        sub="두 CJM의 감정 낙차 지점에서 도출한 잠재 니즈를 어피니티 다이어그램으로 묶었습니다."
       />
 
       {/* Cluster cards 2×2 */}
@@ -142,7 +142,7 @@ export default function TableOneAffinity() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            paddingBottom: 'clamp(32px, 4vw, 56px)',
+            paddingBottom: 'clamp(20px, 2.4vw, 34px)',
             opacity: coreVisible ? 1 : 0,
             transform: coreVisible ? 'none' : 'translateY(16px)',
             transition: 'opacity 0.65s ease, transform 0.65s ease',
@@ -186,10 +186,10 @@ export default function TableOneAffinity() {
       <div
         ref={flowRef}
         style={{
-          background: 'rgba(255,255,255,0.03)',
-          border: '1px solid rgba(255,255,255,0.07)',
+          background: 'rgba(255,255,255,0.04)',
+          border: '1px solid rgba(255,255,255,0.08)',
           borderRadius: layout.rLg,
-          padding: 'clamp(24px, 3vw, 40px)',
+          padding: 'clamp(14px, 1.8vw, 24px)',
           opacity: flowVisible ? 1 : 0,
           transform: flowVisible ? 'none' : 'translateY(16px)',
           transition: 'opacity 0.65s ease, transform 0.65s ease',

@@ -35,10 +35,10 @@ export default function App() {
         <TableOneSurvey />
         <TableOneIDI />
         <TableOneServiceSafari />
-        <TableOneAffinity />
         <TableOnePersona />
         <TableOneAsIsCJM />
         <TableOneInsights />
+        <TableOneAffinity />
         <TableOneStrategyShift />
         <TableOneBMC />
         <TableOneOutro />

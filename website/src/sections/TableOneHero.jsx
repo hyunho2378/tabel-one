@@ -1,115 +1,11 @@
 import { useReveal } from '../lib/useReveal.js';
-import { useCountUp } from '../lib/useCountUp.js';
 import { color, font, type, layout } from '../tokens/web.js';
 import data from '../data/tableOne.json';
 
-const { hero, stats, meta } = data;
-
-function parseNum(val) {
-  const m = String(val).match(/^(\d+)(.*)/);
-  return m ? { num: parseInt(m[1], 10), suffix: m[2] } : null;
-}
-
-// Sub-component: stat with countUp (must be a component to call useCountUp at top level)
-function NumericStat({ stat }) {
-  const parsed = parseNum(stat.value);
-  const [ref, value] = useCountUp(parsed.num, 1400);
-  return (
-    <div ref={ref} style={{ textAlign: 'center' }}>
-      <div style={{
-        fontFamily: font.family,
-        fontSize: 'clamp(28px, 3.8vw, 52px)',
-        fontWeight: 800,
-        color: color.primary,
-        lineHeight: 1,
-        letterSpacing: '-0.03em',
-      }}>
-        {value}{parsed.suffix}
-      </div>
-      <div style={{
-        fontFamily: font.family,
-        fontSize: type.body.size,
-        fontWeight: 500,
-        color: color.ink,
-        marginTop: 10,
-      }}>
-        {stat.label}
-      </div>
-      <div style={{
-        fontFamily: font.family,
-        fontSize: type.caption.size,
-        color: color.inkMuted,
-        marginTop: 4,
-      }}>
-        {stat.sub}
-      </div>
-    </div>
-  );
-}
-
-function TextStat({ stat }) {
-  const [ref, visible] = useReveal({ threshold: 0.3 });
-  return (
-    <div ref={ref} style={{
-      textAlign: 'center',
-      opacity: visible ? 1 : 0,
-      transition: 'opacity 0.6s ease',
-    }}>
-      <div style={{
-        fontFamily: font.family,
-        fontSize: 'clamp(16px, 1.8vw, 26px)',
-        fontWeight: 800,
-        color: color.primary,
-        lineHeight: 1.2,
-        letterSpacing: '-0.02em',
-      }}>
-        {stat.value}
-      </div>
-      <div style={{
-        fontFamily: font.family,
-        fontSize: type.body.size,
-        fontWeight: 500,
-        color: color.ink,
-        marginTop: 10,
-      }}>
-        {stat.label}
-      </div>
-      <div style={{
-        fontFamily: font.family,
-        fontSize: type.caption.size,
-        color: color.inkMuted,
-        marginTop: 4,
-      }}>
-        {stat.sub}
-      </div>
-    </div>
-  );
-}
+const { hero } = data;
 
 export default function TableOneHero() {
   const [ref, visible] = useReveal({ threshold: 0.05 });
-
-  // Build stats row with dividers
-  const statRow = [];
-  stats.forEach((stat, i) => {
-    if (i > 0) {
-      statRow.push(
-        <div key={`div-${i}`} style={{
-          width: 1,
-          alignSelf: 'stretch',
-          background: 'rgba(255,255,255,0.15)',
-          flexShrink: 0,
-          margin: '0 clamp(20px, 3vw, 48px)',
-        }} />
-      );
-    }
-    const parsed = parseNum(stat.value);
-    statRow.push(
-      <div key={`stat-${i}`} style={{ flex: 1 }}>
-        {parsed ? <NumericStat stat={stat} /> : <TextStat stat={stat} />}
-      </div>
-    );
-  });
 
   return (
     <section
@@ -120,11 +16,12 @@ export default function TableOneHero() {
         background: color.bg,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
         padding: `80px ${layout.gut}`,
         position: 'relative',
         boxSizing: 'border-box',
+        overflow: 'hidden',
       }}
     >
       <style>{`
@@ -134,35 +31,31 @@ export default function TableOneHero() {
         }
       `}</style>
 
-      {/* Meta */}
+      {/* z-index 0: background image */}
       <div style={{
-        textAlign: 'center',
-        marginBottom: 40,
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'none' : 'translateY(-16px)',
-        transition: 'opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s',
-      }}>
-        <p style={{
-          margin: '0 0 4px',
-          fontFamily: font.family,
-          fontSize: type.caption.size,
-          color: color.inkMuted,
-        }}>
-          {meta.team} · {meta.course}
-        </p>
-        <p style={{
-          margin: 0,
-          fontFamily: font.family,
-          fontSize: type.caption.size,
-          color: color.inkMuted,
-        }}>
-          {meta.professor}
-        </p>
-      </div>
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: 'url(/hero.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center right',
+        backgroundRepeat: 'no-repeat',
+        zIndex: 0,
+      }} />
 
-      {/* Headline */}
+      {/* z-index 1: gradient overlay — left darker for text contrast */}
       <div style={{
-        textAlign: 'center',
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(to right, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.72) 55%, rgba(13,13,13,0.45) 100%)',
+        zIndex: 1,
+      }} />
+
+      {/* z-index 2: content */}
+      <div style={{
+        position: 'relative',
+        zIndex: 2,
+        textAlign: 'left',
+        width: '100%',
         opacity: visible ? 1 : 0,
         transform: visible ? 'none' : 'translateY(-12px)',
         transition: 'opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s',
@@ -170,17 +63,25 @@ export default function TableOneHero() {
         <h1 style={{
           margin: '0 0 24px',
           fontFamily: font.family,
-          fontSize: type.display.size,
           fontWeight: 800,
           lineHeight: 1.12,
           letterSpacing: '-0.04em',
           color: color.ink,
           wordBreak: 'keep-all',
         }}>
-          {hero.headline}
+          {hero.headline.split('\n').map((line, i, arr) => (
+            <span key={i} style={{
+              display: 'block',
+              fontSize: i === 0 ? type.display.size : type.h1.size,
+              lineHeight: i === 0 ? 1.1 : 1.3,
+              marginBottom: i < arr.length - 1 ? 6 : 0,
+            }}>
+              {line}
+            </span>
+          ))}
         </h1>
         <p style={{
-          margin: 0,
+          margin: '0 0 32px',
           fontFamily: font.family,
           fontSize: type.lead.size,
           fontWeight: type.lead.weight,
@@ -190,18 +91,24 @@ export default function TableOneHero() {
         }}>
           {hero.subheadline}
         </p>
-      </div>
-
-      {/* Stats bar */}
-      <div className="t1-stats-bar" style={{
-        display: 'flex',
-        alignItems: 'stretch',
-        width: '100%',
-        marginTop: 64,
-        opacity: visible ? 1 : 0,
-        transition: 'opacity 0.6s ease 0.65s',
-      }}>
-        {statRow}
+        <a
+          href="https://tabel-one-cx-consulting.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+            textDecoration: 'none',
+            background: color.primary,
+            color: '#fff',
+            fontFamily: font.family,
+            fontSize: type.lead.size,
+            fontWeight: 700,
+            padding: 'clamp(14px, 1.5vw, 18px) clamp(28px, 3vw, 40px)',
+            borderRadius: 999,
+          }}
+        >
+          CX 컨설팅 서비스 보기
+        </a>
       </div>
 
       {/* Scroll arrow */}
@@ -209,6 +116,7 @@ export default function TableOneHero() {
         position: 'absolute',
         bottom: 36,
         left: '50%',
+        zIndex: 2,
         animation: 't1-bounce 2.2s ease-in-out infinite',
         opacity: visible ? 0.45 : 0,
         transition: 'opacity 0.6s ease 1.1s',

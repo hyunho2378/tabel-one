@@ -53,16 +53,16 @@ export default function TableOneOverview() {
       <SectionHeader
         label="PROJECT OVERVIEW"
         title="Table One이란"
-        sub={`${meta.subtitle} — ${meta.period}`}
+        sub={`${meta.subtitle}, ${meta.period}`}
       />
 
       {/* 2-column grid */}
       <div className="t1-overview-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.4fr)',
-        gap: 'clamp(24px, 4vw, 64px)',
+        gap: 'clamp(14px, 2.4vw, 38px)',
         alignItems: 'start',
-        marginBottom: 'clamp(40px, 6vw, 80px)',
+        marginBottom: 'clamp(24px, 3.6vw, 48px)',
       }}>
 
         {/* Left: info card */}
@@ -118,7 +118,7 @@ export default function TableOneOverview() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 'clamp(24px, 3vw, 40px)',
+            gap: 'clamp(14px, 1.8vw, 24px)',
           }}
         >
           {RIGHT_BLOCKS.map(({ label, text, note }, i) => (
@@ -175,9 +175,9 @@ export default function TableOneOverview() {
         ref={bannerRef}
         style={{
           background: 'rgba(124,58,237,0.06)',
-          border: '1px solid rgba(124,58,237,0.2)',
+          border: '1px solid rgba(124,58,237,0.15)',
           borderRadius: layout.rLg,
-          padding: 'clamp(28px, 4vw, 56px) clamp(24px, 4vw, 56px)',
+          padding: 'clamp(17px, 2.4vw, 34px) clamp(14px, 2.4vw, 34px)',
           textAlign: 'center',
           opacity: bannerVisible ? 1 : 0,
           transform: bannerVisible ? 'none' : 'translateY(20px)',

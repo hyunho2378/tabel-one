@@ -26,7 +26,6 @@ function PersonaCard({ p, visible, delay }) {
     <div style={{
       background: 'rgba(255,255,255,0.04)',
       border: `1px solid rgba(255,255,255,0.08)`,
-      borderTop: `3px solid ${accent}`,
       borderRadius: layout.rLg,
       padding: 'clamp(24px, 3vw, 40px)',
       display: 'flex',
@@ -73,6 +72,7 @@ function PersonaCard({ p, visible, delay }) {
             <span style={{
               fontFamily: font.family,
               fontSize: type.caption.size,
+              fontWeight: type.caption.weight,
               color: color.inkFaint,
               minWidth: 72,
               flexShrink: 0,
@@ -85,7 +85,7 @@ function PersonaCard({ p, visible, delay }) {
               fontSize: type.body.size,
               fontWeight: type.body.weight,
               color: color.ink,
-              lineHeight: 1.6,
+              lineHeight: type.body.lh,
               wordBreak: 'keep-all',
             }}>
               {value}
@@ -123,7 +123,7 @@ function PersonaCard({ p, visible, delay }) {
                 fontSize: type.body.size,
                 fontWeight: type.body.weight,
                 color: color.inkMuted,
-                lineHeight: 1.65,
+                lineHeight: type.body.lh,
                 wordBreak: 'keep-all',
               }}>
                 {pt}
@@ -148,7 +148,7 @@ function PersonaCard({ p, visible, delay }) {
           fontWeight: type.body.weight,
           fontStyle: 'italic',
           color: color.ink,
-          lineHeight: 1.7,
+          lineHeight: type.body.lh,
           wordBreak: 'keep-all',
         }}>
           "{p.quote}"
@@ -163,7 +163,7 @@ export default function TableOnePersona() {
 
   return (
     <section id="persona" style={{
-      background: '#111111',
+      background: color.bg,
       padding: `${layout.sectionY} ${layout.gut}`,
       maxWidth: layout.container,
       margin: '0 auto',
@@ -172,7 +172,7 @@ export default function TableOnePersona() {
       <SectionHeader
         label="PERSONA"
         title="페르소나"
-        sub="두 극단 사용자 — 한국인 혼밥러와 외국인 유학생 — 의 경험 격차를 분석했다"
+        sub="한국인 혼밥러와 외국인 유학생, 두 극단 사용자의 경험 격차를 분석했습니다."
       />
 
       <div

@@ -69,7 +69,7 @@ export default function TableOneOutro() {
 
         {/* Sub text */}
         <p style={{
-          margin: '0 0 40px',
+          margin: '0 0 28px',
           fontFamily: font.family,
           fontSize: type.lead.size,
           fontWeight: type.lead.weight,
@@ -80,6 +80,26 @@ export default function TableOneOutro() {
           혼자라는 이유로 어떤 것도 줄어들지 않도록.<br />
           Table One은 공간과 경험을 재설계합니다.
         </p>
+
+        <a
+          href="https://tabel-one-cx-consulting.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+            marginBottom: 40,
+            textDecoration: 'none',
+            background: color.primary,
+            color: '#fff',
+            fontFamily: font.family,
+            fontSize: type.lead.size,
+            fontWeight: 700,
+            padding: 'clamp(14px, 1.5vw, 18px) clamp(28px, 3vw, 40px)',
+            borderRadius: 999,
+          }}
+        >
+          CX 컨설팅 서비스 보러가기
+        </a>
 
         {/* Team info */}
         <div style={{
