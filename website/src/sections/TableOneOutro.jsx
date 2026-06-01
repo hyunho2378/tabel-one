@@ -47,7 +47,7 @@ export default function TableOneOutro() {
         <p style={{
           margin: '0 0 20px',
           fontFamily: font.family,
-          fontSize: 'clamp(22px, 3vw, 48px)',
+          fontSize: 'clamp(16px, 3vw, 42px)',
           fontWeight: 800,
           color: color.ink,
           lineHeight: 1.25,
