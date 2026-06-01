@@ -243,7 +243,7 @@ export default function ConsultingHero() {
             <h1 style={{
               margin: '0 0 16px',
               fontFamily: font.family,
-              fontSize: 'clamp(36px, 5vw, 72px)',
+              fontSize: 'clamp(30px, 5vw, 66px)',
               fontWeight: 800,
               lineHeight: 1.12,
               letterSpacing: '-0.04em',

@@ -22,9 +22,9 @@ export const font = {
 };
 
 export const type = {
-  display: { size: 'clamp(37px,5.4vw,80px)',   lh: 1.22, weight: 800, ls: '-0.04em' },
-  h1:      { size: 'clamp(27px,3.75vw,53px)',  lh: 1.22, weight: 800, ls: '-0.03em' },
-  h2:      { size: 'clamp(22px,2.67vw,40px)',  lh: 1.25, weight: 700, ls: '-0.02em' },
+  display: { size: 'clamp(31px,5.4vw,74px)',   lh: 1.22, weight: 800, ls: '-0.04em' },
+  h1:      { size: 'clamp(21px,3.75vw,47px)',  lh: 1.22, weight: 800, ls: '-0.03em' },
+  h2:      { size: 'clamp(16px,2.67vw,34px)',  lh: 1.25, weight: 700, ls: '-0.02em' },
   h3:      { size: 'clamp(17px,1.58vw,23px)',  lh: 1.35, weight: 700, ls: '-0.01em' },
   lead:    { size: 'clamp(13px,1.17vw,17px)',  lh: 1.75, weight: 400 },
   body:    { size: 'clamp(11px,0.9vw,13px)',   lh: 1.78, weight: 400 },
