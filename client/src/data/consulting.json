@@ -145,16 +145,83 @@
       "title": "손님 키오스크",
       "sub": "입장 시 전체 좌석 확인 후 직접 선택",
       "seats": [
-        { "id": 1, "label": "1번", "status": "occupied",  "type": "1인석", "x": 8,   "y": 16, "w": 48, "h": 50 },
-        { "id": 2, "label": "2번", "status": "available", "type": "1인석", "x": 64,  "y": 16, "w": 48, "h": 50 },
-        { "id": 3, "label": "3번", "status": "available", "type": "1인석", "x": 120, "y": 16, "w": 48, "h": 50, "recommended": true },
-        { "id": 4, "label": "4번", "status": "available", "type": "2인석", "x": 8,   "y": 95, "w": 100, "h": 55 },
-        { "id": 5, "label": "5번", "status": "occupied",  "type": "4인석", "x": 184, "y": 8,  "w": 88, "h": 97 },
-        { "id": 6, "label": "6번", "status": "available", "type": "1인석", "x": 8,   "y": 165, "w": 48, "h": 42 }
+        { "id": 1, "label": "1", "status": "occupied",  "type": "1인석", "x": 8,   "y": 16, "w": 48, "h": 50 },
+        { "id": 2, "label": "2", "status": "available", "type": "1인석", "x": 64,  "y": 16, "w": 48, "h": 50 },
+        { "id": 3, "label": "3", "status": "available", "type": "1인석", "x": 120, "y": 16, "w": 48, "h": 50, "recommended": true },
+        { "id": 4, "label": "4", "status": "available", "type": "2인석", "x": 8,   "y": 95, "w": 100, "h": 55 },
+        { "id": 5, "label": "5", "status": "occupied",  "type": "4인석", "x": 184, "y": 8,  "w": 88, "h": 97 },
+        { "id": 6, "label": "6", "status": "available", "type": "1인석", "x": 8,   "y": 165, "w": 48, "h": 42 }
       ],
-      "selectPrompt": "앉고 싶은 자리를 선택하세요",
-      "confirmLabel": "이 자리로 할게요",
-      "languages": ["한국어", "English", "عربي"]
+      "languages": ["한국어", "English", "عربي"],
+      "langKeys": ["ko", "en", "ar"],
+      "i18n": {
+        "ko": {
+          "selectPrompt": "앉고 싶은 자리를 선택하세요",
+          "confirmLabel": "이 자리로 할게요",
+          "seatSuffix": "번",
+          "recommended": "★ 추천",
+          "zones": {
+            "windowSolo": "창가 파티션 1인석",
+            "twoSeat": "2인석",
+            "fourSeat": "4인석",
+            "regularSolo": "일반 1인석",
+            "kitchen": "주방",
+            "entrance": "← 입구"
+          },
+          "status": {
+            "occupied": "사용 중",
+            "available": "비어있음",
+            "selecting": "선택 중",
+            "confirmed": "방금 입장"
+          },
+          "notification": "{n}번 테이블 손님 입장",
+          "dir": "ltr"
+        },
+        "en": {
+          "selectPrompt": "Choose your seat",
+          "confirmLabel": "Confirm seat",
+          "seatSuffix": "",
+          "recommended": "★ Best",
+          "zones": {
+            "windowSolo": "Window · Solo",
+            "twoSeat": "2-Seat",
+            "fourSeat": "4-Seat",
+            "regularSolo": "Solo",
+            "kitchen": "Kitchen",
+            "entrance": "← Entrance"
+          },
+          "status": {
+            "occupied": "Occupied",
+            "available": "Open",
+            "selecting": "Selecting",
+            "confirmed": "Seated"
+          },
+          "notification": "Table {n} — Guest seated",
+          "dir": "ltr"
+        },
+        "ar": {
+          "selectPrompt": "اختر مقعدك",
+          "confirmLabel": "تأكيد المقعد",
+          "seatSuffix": "",
+          "recommended": "★ مُوصى",
+          "zones": {
+            "windowSolo": "نافذة فردي",
+            "twoSeat": "مقعدان",
+            "fourSeat": "4 مقاعد",
+            "regularSolo": "قسم فردي",
+            "kitchen": "المطبخ",
+            "entrance": "المدخل"
+          },
+          "status": {
+            "occupied": "مشغول",
+            "available": "متاح",
+            "selecting": "اختيار",
+            "confirmed": "دخل"
+          },
+          "notification": "الطاولة {n} — دخل الضيف",
+          "dir": "rtl"
+        }
+      }
     },
     "dashboard": {
       "title": "사장님 대시보드",
@@ -165,7 +232,7 @@
         "selecting": "선택 중",
         "confirmed": "방금 입장"
       },
-      "notification": "3번 테이블 손님 입장"
+      "notification": "{n}번 테이블 손님 입장"
     }
   },
 

@@ -17,7 +17,7 @@ const STATUS_BG = {
   confirmed: '#10B981',
 };
 const STATUS_TEXT = {
-  occupied:  'rgba(255,255,255,0.28)',
+  occupied:  'rgba(255,255,255,0.60)',
   available: '#FFFFFF',
   selecting: '#FFFFFF',
   confirmed: '#FFFFFF',
@@ -29,7 +29,7 @@ const STATUS_BORDER = {
   confirmed: '1px solid #10B981',
 };
 
-function FloorPlan({ seats, onSeatClick, interactive }) {
+function FloorPlan({ seats, onSeatClick, interactive, zones, statusLabels, recommended, seatSuffix }) {
   return (
     <div style={{ position: 'relative', width: '100%' }}>
 
@@ -48,16 +48,16 @@ function FloorPlan({ seats, onSeatClick, interactive }) {
         <rect x="184" y="0" width="96" height="7"
           fill="rgba(255,255,255,0.04)" />
         <text x="228" y="5.8" textAnchor="middle"
-          fill="rgba(255,255,255,0.22)" fontSize="6.5" fontWeight="700" letterSpacing="1.2"
+          fill="rgba(255,255,255,0.45)" fontSize="6.5" fontWeight="400" letterSpacing="0.8"
           fontFamily={font.family}>
-          주방
+          {zones.kitchen}
         </text>
 
         {/* 창가 파티션 zone label — above seat row */}
         <text x="82" y="11" textAnchor="middle"
-          fill="rgba(255,255,255,0.18)" fontSize="6.5" fontWeight="600" letterSpacing="0.8"
+          fill="rgba(255,255,255,0.40)" fontSize="6.5" fontWeight="400" letterSpacing="0.5"
           fontFamily={font.family}>
-          창가 파티션 1인석
+          {zones.windowSolo}
         </text>
 
         {/* Partition divider line — below window seats */}
@@ -65,31 +65,31 @@ function FloorPlan({ seats, onSeatClick, interactive }) {
           stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
 
         {/* 2인석 zone label */}
-        <text x="9" y="89" fill="rgba(255,255,255,0.15)" fontSize="6.5" fontWeight="600"
+        <text x="9" y="89" fill="rgba(255,255,255,0.35)" fontSize="6.5" fontWeight="400"
           letterSpacing="0.5" fontFamily={font.family}>
-          2인석
+          {zones.twoSeat}
         </text>
 
-        {/* 4인석 zone label — below the 4인석 block */}
+        {/* 4인석 zone label */}
         <text x="228" y="109" textAnchor="middle"
-          fill="rgba(255,255,255,0.15)" fontSize="6.5" fontWeight="600"
+          fill="rgba(255,255,255,0.35)" fontSize="6.5" fontWeight="400"
           letterSpacing="0.5" fontFamily={font.family}>
-          4인석
+          {zones.fourSeat}
         </text>
 
         {/* 일반 1인석 zone label */}
-        <text x="9" y="160" fill="rgba(255,255,255,0.15)" fontSize="6.5" fontWeight="600"
+        <text x="9" y="160" fill="rgba(255,255,255,0.35)" fontSize="6.5" fontWeight="400"
           letterSpacing="0.5" fontFamily={font.family}>
-          일반 1인석
+          {zones.regularSolo}
         </text>
 
         {/* Entrance indicator — bottom-right dashed */}
         <line x1="172" y1={PH - 1} x2={PW - 1} y2={PH - 1}
           stroke="rgba(255,255,255,0.14)" strokeWidth="2" strokeDasharray="4,3" />
         <text x="226" y={PH - 3} textAnchor="middle"
-          fill="rgba(255,255,255,0.22)" fontSize="6.5" fontWeight="600"
+          fill="rgba(255,255,255,0.40)" fontSize="6.5" fontWeight="400"
           fontFamily={font.family}>
-          ← 입구
+          {zones.entrance}
         </text>
       </svg>
 
@@ -117,13 +117,14 @@ function FloorPlan({ seats, onSeatClick, interactive }) {
               alignItems: 'center',
               justifyContent: 'center',
               gap: 2,
-              padding: '2px 3px',
+              padding: '3px 4px',
               boxSizing: 'border-box',
               overflow: 'hidden',
               transition: 'background 0.4s ease, border-color 0.4s ease',
               animation: seat.status === 'selecting' ? 'pulse 1.1s ease-in-out infinite' : 'none',
             }}
           >
+            {/* Seat number — bold only here */}
             <span style={{
               fontFamily: font.family,
               fontSize: 'clamp(7px, 0.75vw, 10px)',
@@ -131,9 +132,10 @@ function FloorPlan({ seats, onSeatClick, interactive }) {
               color: STATUS_TEXT[seat.status],
               lineHeight: 1,
             }}>
-              {seat.label}
+              {seat.label}{seatSuffix}
             </span>
 
+            {/* Recommendation badge — bold; status text — normal weight */}
             {isRec ? (
               <span style={{
                 fontFamily: font.family,
@@ -142,17 +144,17 @@ function FloorPlan({ seats, onSeatClick, interactive }) {
                 fontWeight: 700,
                 lineHeight: 1,
               }}>
-                ★ 추천
+                {recommended}
               </span>
             ) : (
               <span style={{
                 fontFamily: font.family,
                 fontSize: 'clamp(6px, 0.58vw, 8px)',
+                fontWeight: 400,
                 color: seat.status === 'available' ? color.primaryLight : STATUS_TEXT[seat.status],
-                opacity: seat.status === 'occupied' ? 0.5 : 0.85,
                 lineHeight: 1,
               }}>
-                {demo.dashboard.statusLabels[seat.status]}
+                {statusLabels[seat.status]}
               </span>
             )}
           </button>
@@ -168,6 +170,10 @@ export default function ConsultingDemo() {
   const [langIdx, setLangIdx] = useState(0);
   const [notification, setNotification] = useState(null);
 
+  const langKey = demo.kiosk.langKeys[langIdx];
+  const lang = demo.kiosk.i18n[langKey];
+  const koStr = demo.kiosk.i18n.ko;
+
   function handleSeatClick(id) {
     const seat = seats.find(s => s.id === id);
     if (!seat || seat.status !== 'available') return;
@@ -176,8 +182,8 @@ export default function ConsultingDemo() {
 
     setTimeout(() => {
       setSeats(prev => prev.map(s => s.id === id ? { ...s, status: 'confirmed' } : s));
-      const seatLabel = demo.kiosk.seats.find(s => s.id === id).label;
-      setNotification(demo.dashboard.notification.replace(/\d+번/, seatLabel));
+      const seatNum = demo.kiosk.seats.find(s => s.id === id).label;
+      setNotification(demo.dashboard.notification.replace('{n}', seatNum));
       setTimeout(() => setNotification(null), 3000);
     }, 1500);
   }
@@ -217,7 +223,7 @@ export default function ConsultingDemo() {
           borderRadius: 24,
           padding: 'clamp(20px, 2.5vw, 32px)',
           boxShadow: '0 24px 64px rgba(0,0,0,0.5)',
-          border: '1px solid rgba(255,255,255,0.09)',
+          border: `1px solid ${color.line}`,
           display: 'flex',
           flexDirection: 'column',
           gap: 16,
@@ -226,7 +232,7 @@ export default function ConsultingDemo() {
             <p style={{ margin: '0 0 3px', fontFamily: font.family, fontSize: type.h3.size, fontWeight: 700, color: color.ink }}>
               {demo.kiosk.title}
             </p>
-            <p style={{ margin: 0, fontFamily: font.family, fontSize: type.body.size, color: color.inkMuted }}>
+            <p style={{ margin: 0, fontFamily: font.family, fontSize: type.body.size, fontWeight: 400, color: color.inkMuted }}>
               {demo.kiosk.sub}
             </p>
           </div>
@@ -239,9 +245,9 @@ export default function ConsultingDemo() {
             borderRadius: 999,
             padding: 4,
           }}>
-            {demo.kiosk.languages.map((lang, i) => (
+            {demo.kiosk.languages.map((langLabel, i) => (
               <button
-                key={lang}
+                key={demo.kiosk.langKeys[i]}
                 onClick={() => setLangIdx(i)}
                 style={{
                   flex: 1,
@@ -257,7 +263,7 @@ export default function ConsultingDemo() {
                   transition: 'background 0.2s, color 0.2s',
                 }}
               >
-                {lang}
+                {langLabel}
               </button>
             ))}
           </div>
@@ -267,24 +273,36 @@ export default function ConsultingDemo() {
             margin: 0,
             fontFamily: font.family,
             fontSize: type.body.size,
+            fontWeight: 400,
             color: color.inkMuted,
-            textAlign: 'center',
+            textAlign: lang.dir === 'rtl' ? 'right' : 'center',
+            direction: lang.dir,
           }}>
-            {demo.kiosk.selectPrompt}
+            {lang.selectPrompt}
           </p>
 
           {/* Floor plan — interactive */}
-          <FloorPlan seats={seats} onSeatClick={handleSeatClick} interactive={true} />
+          <FloorPlan
+            seats={seats}
+            onSeatClick={handleSeatClick}
+            interactive={true}
+            zones={lang.zones}
+            statusLabels={lang.status}
+            recommended={lang.recommended}
+            seatSuffix={lang.seatSuffix}
+          />
 
           {/* Confirm hint */}
           <p style={{
             margin: 0,
             fontFamily: font.family,
             fontSize: 10,
+            fontWeight: 400,
             color: color.inkFaint,
-            textAlign: 'center',
+            textAlign: lang.dir === 'rtl' ? 'right' : 'center',
+            direction: lang.dir,
           }}>
-            {demo.kiosk.confirmLabel}
+            {lang.confirmLabel}
           </p>
         </div>
 
@@ -293,7 +311,7 @@ export default function ConsultingDemo() {
           background: '#0A0A0A',
           borderRadius: 16,
           padding: 'clamp(20px, 2.5vw, 32px)',
-          border: '5px solid #222',
+          border: `1px solid ${color.line}`,
           boxShadow: '0 24px 64px rgba(0,0,0,0.6)',
           position: 'relative',
           overflow: 'hidden',
@@ -324,7 +342,7 @@ export default function ConsultingDemo() {
             <p style={{ margin: '0 0 3px', fontFamily: font.family, fontSize: type.h3.size, fontWeight: 700, color: color.ink }}>
               {demo.dashboard.title}
             </p>
-            <p style={{ margin: 0, fontFamily: font.family, fontSize: type.body.size, color: color.inkMuted }}>
+            <p style={{ margin: 0, fontFamily: font.family, fontSize: type.body.size, fontWeight: 400, color: color.inkMuted }}>
               {demo.dashboard.sub}
             </p>
           </div>
@@ -337,15 +355,23 @@ export default function ConsultingDemo() {
                   width: 8, height: 8, borderRadius: '50%',
                   background: STATUS_BG[key] === '#2A2A2A' ? '#444' : STATUS_BG[key],
                 }} />
-                <span style={{ fontFamily: font.family, fontSize: 10, color: color.inkFaint }}>
+                <span style={{ fontFamily: font.family, fontSize: 10, fontWeight: 400, color: color.inkFaint }}>
                   {label}
                 </span>
               </div>
             ))}
           </div>
 
-          {/* Floor plan — mirrored, non-interactive */}
-          <FloorPlan seats={seats} onSeatClick={() => {}} interactive={false} />
+          {/* Floor plan — mirrored, non-interactive, always Korean */}
+          <FloorPlan
+            seats={seats}
+            onSeatClick={() => {}}
+            interactive={false}
+            zones={koStr.zones}
+            statusLabels={koStr.status}
+            recommended={koStr.recommended}
+            seatSuffix={koStr.seatSuffix}
+          />
         </div>
       </div>
     </section>
