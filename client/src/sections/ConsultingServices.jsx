@@ -139,9 +139,9 @@ function ServiceCard({ svc, visible, delay, expanded, onToggle }) {
 
       {/* Curb-cut effect box */}
       <div style={{
-        borderLeft: `2px solid ${color.ok}`,
         background: 'rgba(16,185,129,0.06)',
-        borderRadius: '0 6px 6px 0',
+        border: `1px solid ${color.line}`,
+        borderRadius: layout.rSm,
         padding: '10px 14px',
         marginTop: 'auto',
       }}>

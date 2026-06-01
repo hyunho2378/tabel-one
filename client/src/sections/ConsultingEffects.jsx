@@ -39,7 +39,6 @@ export default function ConsultingEffects() {
             style={{
               background: 'rgba(255,255,255,0.04)',
               border: '1px solid rgba(255,255,255,0.08)',
-              borderTop: `2px solid ${color.primary}`,
               borderRadius: layout.rMd,
               padding: 'clamp(12px, 1.5vw, 19px)',
               opacity: cardsVisible ? 1 : 0,

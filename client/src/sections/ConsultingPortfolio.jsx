@@ -39,7 +39,7 @@ export default function ConsultingPortfolio() {
           {/* Meta header */}
           <div style={{
             background: 'rgba(124,58,237,0.08)',
-            borderBottom: '1px solid rgba(124,58,237,0.2)',
+            borderBottom: `1px solid ${color.line}`,
             padding: 'clamp(12px, 1.5vw, 19px)',
             display: 'flex',
             flexWrap: 'wrap',
@@ -60,9 +60,9 @@ export default function ConsultingPortfolio() {
 
             {/* Challenge */}
             <div style={{
-              borderLeft: `3px solid ${color.primary}`,
               background: 'rgba(124,58,237,0.07)',
-              borderRadius: '0 8px 8px 0',
+              border: `1px solid ${color.line}`,
+              borderRadius: layout.rMd,
               padding: 'clamp(10px, 1.2vw, 14px)',
               marginBottom: 'clamp(14px, 1.8vw, 22px)',
             }}>

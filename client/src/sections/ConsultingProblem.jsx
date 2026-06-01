@@ -50,7 +50,6 @@ function ClaimItem({ claim, i, visible }) {
 
         {/* Evidence */}
         <div style={{
-          borderLeft: `2px solid ${color.primary}`,
           paddingLeft: 'clamp(12px, 1.5vw, 20px)',
           marginBottom: 10,
         }}>
@@ -111,9 +110,9 @@ export default function ConsultingProblem() {
         ref={closingRef}
         style={{
           marginTop: 'clamp(19px, 2.4vw, 34px)',
-          borderLeft: `4px solid ${color.primary}`,
           background: 'rgba(124,58,237,0.06)',
-          borderRadius: '0 8px 8px 0',
+          border: `1px solid ${color.line}`,
+          borderRadius: layout.rMd,
           padding: 'clamp(12px, 1.5vw, 19px)',
           opacity: closingVisible ? 1 : 0,
           transform: closingVisible ? 'none' : 'translateX(-16px)',
