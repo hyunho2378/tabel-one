@@ -161,7 +161,7 @@ export default function UserRequirements() {
                   gap: 16,
                   marginBottom: 'clamp(16px,2vw,24px)',
                   paddingBottom: 'clamp(16px,2vw,24px)',
-                  borderBottom: `2px solid ${isPrimary ? color.brand : color.line}`,
+                  borderBottom: `2px solid ${color.line}`,
                   opacity: visible ? 1 : 0,
                   transform: visible ? 'none' : 'translateY(20px)',
                   transition: 'opacity 0.7s ease-out, transform 0.7s ease-out',
