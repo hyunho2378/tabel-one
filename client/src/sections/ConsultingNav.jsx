@@ -21,7 +21,7 @@ export default function ConsultingNav() {
       <div style={{
         maxWidth: layout.container,
         margin: '0 auto',
-        padding: '0 clamp(20px, 5vw, 80px)',
+        padding: `0 ${layout.gut}`,
         height: 60,
         display: 'flex',
         alignItems: 'center',
@@ -128,7 +128,7 @@ export default function ConsultingNav() {
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
           borderTop: `1px solid ${color.line}`,
-          padding: '12px 24px 16px',
+          padding: `12px ${layout.gut} 16px`,
         }}>
           {nav.links.map(({ label, anchor }) => (
             <a

@@ -185,7 +185,7 @@ export default function ConsultingHero() {
       <div style={{
         maxWidth: layout.container,
         margin: '0 auto',
-        padding: `clamp(36px, 4.2vw, 60px) ${layout.gut} clamp(29px, 3vw, 43px)`,
+        padding: `${layout.sectionY} ${layout.gut}`,
         width: '100%',
         boxSizing: 'border-box',
       }}>
