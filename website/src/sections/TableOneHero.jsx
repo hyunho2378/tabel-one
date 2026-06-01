@@ -18,7 +18,7 @@ export default function TableOneHero() {
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        padding: `80px ${layout.gut}`,
+        padding: `${layout.sectionY} ${layout.gut}`,
         position: 'relative',
         boxSizing: 'border-box',
         overflow: 'hidden',

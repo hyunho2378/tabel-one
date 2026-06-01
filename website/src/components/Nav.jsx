@@ -125,7 +125,7 @@ export default function Nav() {
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
             borderTop: `1px solid ${color.line}`,
-            padding: '12px 24px 16px',
+            padding: `12px ${layout.gut} 16px`,
           }}
         >
           {LINKS.map(({ label, href }) => (
