@@ -2,10 +2,6 @@ import { useState } from 'react';
 import { color, font, type, layout } from '../tokens/web.js';
 import { useReveal } from '../lib/useReveal.js';
 import SectionHeader from '../components/SectionHeader.jsx';
-import data from '../data/consulting.json';
-
-const { demo } = data;
-
 // Floor plan reference dimensions (pixels) — SVG viewBox matches these
 const PW = 280;
 const PH = 212;
@@ -164,7 +160,8 @@ function FloorPlan({ seats, onSeatClick, interactive, zones, statusLabels, recom
   );
 }
 
-export default function ConsultingDemo() {
+export default function ConsultingDemo({ data }) {
+  const { demo } = data;
   const [sectionRef, sectionVisible] = useReveal({ threshold: 0.05 });
   const [seats, setSeats] = useState(() => demo.kiosk.seats.map(s => ({ ...s })));
   const [langIdx, setLangIdx] = useState(0);

@@ -1,0 +1,356 @@
+{
+  "meta": {
+    "siteName": "Table One CX Consulting",
+    "tagline": "Turning solo-dining spaces into respectful experiences",
+    "taglineEn": "We Engineer Solo-Dining Respect, Not Luck",
+    "description": "We transform local restaurants through research-driven space redesign and digital solutions.",
+    "contact": {
+      "email": "tableonecx@hallym.ac.kr",
+      "kakao": "Table One CX"
+    },
+    "team": "CX Design Team H2S",
+    "affiliation": "Hallym University — Digital CX for Startup"
+  },
+
+  "hero": {
+    "badge": "CX Space Consulting",
+    "slogan": "Turning solo-dining spaces into respectful experiences",
+    "headline": "Table One",
+    "headlineEn": "",
+    "sub": "Research-driven space redesign and digital solutions\nthat transform local restaurants' solo-dining experience.",
+    "cta1": "Get in Touch",
+    "cta2": "View Case Study",
+    "stats": [
+      {
+        "value": 64,
+        "unit": "",
+        "label": "Research Participants",
+        "sub": "Korean 39 + International 25"
+      },
+      {
+        "value": 3,
+        "unit": "",
+        "label": "Core Solutions",
+        "sub": "Space + Kiosk + Onboarding"
+      },
+      {
+        "value": 2,
+        "unit": "",
+        "label": "Target Segments",
+        "sub": "Korean solo diners + International students"
+      }
+    ]
+  },
+
+  "problem": {
+    "label": "WHY IT MATTERS",
+    "headline": "Solo-dining spaces have solvable problems",
+    "sub": "Four truths uncovered by research",
+    "claims": [
+      {
+        "id": "c1",
+        "claim": "Solo-dining discomfort is a design problem, not a personal one.",
+        "evidence": "Both Korean and international diners ranked social pressure from others as their top discomfort (26–28%). A single partition can structurally eliminate this anxiety.",
+        "source": "Table One Survey n=64, 2026"
+      },
+      {
+        "id": "c2",
+        "claim": "Eating alone more often doesn't make it more comfortable. The space has to change.",
+        "evidence": "International students — who eat alone more frequently than Koreans — actually reported higher discomfort (International 2.7 / Korean 2.3 out of 5). Frequency is not the solution.",
+        "source": "Table One Survey n=64, 2026"
+      },
+      {
+        "id": "c3",
+        "claim": "Korean and international diners face completely different barriers in the same space.",
+        "evidence": "The share citing language barriers as a pain point: Korean 0%, International 16%. The same restaurant creates entirely different entry experiences for each group.",
+        "source": "Table One Survey n=64, 2026"
+      },
+      {
+        "id": "c4",
+        "claim": "Remove even one barrier, and customers who haven't arrived yet will start coming.",
+        "evidence": "Our Service Safari found three things missing: an English kiosk, dietary labels, and wayfinding. This space was effectively closed to international customers.",
+        "source": "Table One Service Safari, Misung Katsu Chuncheon, 2026"
+      }
+    ],
+    "closing": "The economic barriers are low. The CX barriers are high. Fix them, and customers ready to spend are waiting."
+  },
+
+  "services": {
+    "label": "SERVICES",
+    "headline": "3 Service Packages",
+    "sub": "We solve research-identified problems with research-validated solutions.",
+    "items": [
+      {
+        "no": "01",
+        "id": "space",
+        "name": "Space Redesign",
+        "nameEn": "Space Redesign",
+        "icon": "partition",
+        "summary": "We redesign partition layouts and seating structure so solo diners can choose their seat on their own terms.",
+        "detail": "When solo diners are directed to single seats, the sense of exclusion is a space design problem, not a service issue. Installing partitions converts 4-seat tables into solo-friendly zones. When there's a choice, there's dignity.",
+        "deliverables": [
+          "On-site space audit and customer flow analysis",
+          "Partition layout plan (CAD drawing)",
+          "Furniture and lighting placement guide",
+          "Solo zone design and signage system"
+        ],
+        "painSolved": "Loss of seat autonomy / Forced single-seat assignment / Awkward table layout",
+        "curbCut": "Separated seating designed for solo diners also enhances privacy for couples and group diners."
+      },
+      {
+        "no": "02",
+        "id": "kiosk",
+        "name": "Kiosk Integration",
+        "nameEn": "Kiosk Integration",
+        "icon": "screen",
+        "summary": "Guests self-select their seat on arrival, and the choice reflects instantly on the owner's screen in the kitchen.",
+        "detail": "This solves two simultaneous problems: the owner can't leave the kitchen to greet guests, and guests don't know where to sit. Guests see the full seat map and choose independently. The owner stays informed in real time without stepping out. It connects the line of internal interaction through a digital bridge.",
+        "deliverables": [
+          "Guest kiosk UI design and delivery",
+          "Owner dashboard installation (tablet or monitor)",
+          "Korean, English, and Arabic multilingual support",
+          "Real-time seat status sync",
+          "Menu QR integration (optional)"
+        ],
+        "painSolved": "No seating guidance / Language barriers / Contactless preference / Owner greeting burden",
+        "curbCut": "The English-language UI built for international guests also aligns with Korean guests' preference for contactless ordering.",
+        "hasDemo": true
+      },
+      {
+        "no": "03",
+        "id": "onboarding",
+        "name": "Owner Onboarding",
+        "nameEn": "Owner Onboarding",
+        "icon": "guide",
+        "summary": "We provide staff communication guides, Solo-Friendly Certification, and a manual for serving international guests.",
+        "detail": "Space and technology change, but the experience doesn't unless people do too. The words an owner says to a solo diner set the tone for the entire CX. Our communication guide starts from expressions real users said they wanted, drawn directly from our research.",
+        "deliverables": [
+          "Solo-Friendly Certification badge issuance",
+          "Solo diner communication script guidebook",
+          "Basic international guest response cards (English and Arabic)",
+          "Table One platform registration and listing",
+          "Quarterly CX data report"
+        ],
+        "painSolved": "Unfriendly staff responses / Fear of international guest communication / Perceived discrimination against solo diners",
+        "curbCut": "The international guest communication manual eliminates the owner's anxiety about serving foreign customers and opens a new revenue stream."
+      }
+    ]
+  },
+
+  "demo": {
+    "label": "LIVE DEMO",
+    "headline": "This is how it works",
+    "sub": "The moment a guest selects a seat, it reflects instantly on the owner's screen.",
+    "kiosk": {
+      "title": "Guest Kiosk",
+      "sub": "Browse the seat map and select on arrival",
+      "seats": [
+        { "id": 1, "label": "1", "status": "occupied",  "type": "1인석", "x": 8,   "y": 16, "w": 48, "h": 50 },
+        { "id": 2, "label": "2", "status": "available", "type": "1인석", "x": 64,  "y": 16, "w": 48, "h": 50 },
+        { "id": 3, "label": "3", "status": "available", "type": "1인석", "x": 120, "y": 16, "w": 48, "h": 50, "recommended": true },
+        { "id": 4, "label": "4", "status": "available", "type": "2인석", "x": 8,   "y": 95, "w": 100, "h": 55 },
+        { "id": 5, "label": "5", "status": "occupied",  "type": "4인석", "x": 184, "y": 8,  "w": 88, "h": 97 },
+        { "id": 6, "label": "6", "status": "available", "type": "1인석", "x": 8,   "y": 165, "w": 48, "h": 42 }
+      ],
+      "languages": ["한국어", "English", "عربي"],
+      "langKeys": ["ko", "en", "ar"],
+      "i18n": {
+        "ko": {
+          "selectPrompt": "앉고 싶은 자리를 선택하세요",
+          "confirmLabel": "이 자리로 할게요",
+          "seatSuffix": "번",
+          "recommended": "★ 추천",
+          "zones": {
+            "windowSolo": "창가 파티션 1인석",
+            "twoSeat": "2인석",
+            "fourSeat": "4인석",
+            "regularSolo": "일반 1인석",
+            "kitchen": "주방",
+            "entrance": "← 입구"
+          },
+          "status": {
+            "occupied": "사용 중",
+            "available": "비어있음",
+            "selecting": "선택 중",
+            "confirmed": "방금 입장"
+          },
+          "notification": "{n}번 테이블 손님 입장",
+          "dir": "ltr"
+        },
+        "en": {
+          "selectPrompt": "Choose your seat",
+          "confirmLabel": "Confirm seat",
+          "seatSuffix": "",
+          "recommended": "★ Best",
+          "zones": {
+            "windowSolo": "Window · Solo",
+            "twoSeat": "2-Seat",
+            "fourSeat": "4-Seat",
+            "regularSolo": "Solo",
+            "kitchen": "Kitchen",
+            "entrance": "← Entrance"
+          },
+          "status": {
+            "occupied": "Occupied",
+            "available": "Open",
+            "selecting": "Selecting",
+            "confirmed": "Seated"
+          },
+          "notification": "Table {n} — Guest seated",
+          "dir": "ltr"
+        },
+        "ar": {
+          "selectPrompt": "اختر مقعدك",
+          "confirmLabel": "تأكيد المقعد",
+          "seatSuffix": "",
+          "recommended": "★ مُوصى",
+          "zones": {
+            "windowSolo": "نافذة فردي",
+            "twoSeat": "مقعدان",
+            "fourSeat": "4 مقاعد",
+            "regularSolo": "قسم فردي",
+            "kitchen": "المطبخ",
+            "entrance": "المدخل"
+          },
+          "status": {
+            "occupied": "مشغول",
+            "available": "متاح",
+            "selecting": "اختيار",
+            "confirmed": "دخل"
+          },
+          "notification": "الطاولة {n} — دخل الضيف",
+          "dir": "rtl"
+        }
+      }
+    },
+    "dashboard": {
+      "title": "Owner Dashboard",
+      "sub": "Real-time seat status in the kitchen",
+      "statusLabels": {
+        "occupied": "Occupied",
+        "available": "Available",
+        "selecting": "Selecting",
+        "confirmed": "Seated"
+      },
+      "notification": "Table {n} — Guest seated"
+    }
+  },
+
+  "effects": {
+    "label": "WHY IT WORKS",
+    "headline": "Business Impact",
+    "sub": "Change the space, change the experience. Change the experience, change the revenue.",
+    "items": [
+      {
+        "icon": "users",
+        "title": "International Customer Acquisition",
+        "desc": "An English-language kiosk and dietary labels open the door to international students who previously couldn't access the restaurant. Hallym University alone has over 1,200 international students enrolled.",
+        "source": "Hallym University International Student Census 2025"
+      },
+      {
+        "icon": "rotate",
+        "title": "Improved Table Turnover",
+        "desc": "Partition-based seating resolves the problem of solo diners occupying 4-seat tables for extended periods, improving seat utilization during peak hours.",
+        "source": "Table One Space Redesign Pilot Analysis"
+      },
+      {
+        "icon": "heart",
+        "title": "Higher Return Visit Rate",
+        "desc": "Solo diners who feel respected come back. Our research confirmed that feeling disrespected in a dining environment reduces return visit intent.",
+        "source": "Table One IDI n=4, 2026"
+      },
+      {
+        "icon": "globe",
+        "title": "Multilingual Accessibility",
+        "desc": "We convert a Korean-only environment into a multilingual one, removing the ordering anxiety and language stress that international customers face.",
+        "source": "Table One Service Safari, 2026"
+      }
+    ]
+  },
+
+  "portfolio": {
+    "label": "CASE STUDY",
+    "headline": "Case Study",
+    "sub": "From research to solution design, verified in the field.",
+    "cases": [
+      {
+        "id": "misung",
+        "client": "Misung Katsu",
+        "location": "Hyomun-dong, Chuncheon",
+        "industry": "Local Restaurant / Tonkatsu",
+        "period": "2026.03 ~ 2026.05",
+        "type": "Pilot Research + Solution Design",
+        "challenge": "Solo diners funneled to single seats, Korean-only kiosk, triple entry barriers for international customers",
+        "approach": [
+          "Service Safari direct experience (international student persona)",
+          "Survey n=64 + In-Depth Interviews (IDI) n=4, cross-validated",
+          "Two Customer Journey Maps created (Korean vs. international comparison)",
+          "Service Blueprint designed (kiosk line of internal interaction included)"
+        ],
+        "solutions": [
+          "Partition layout plan, 1-person/4-person convertible seating design",
+          "Seat selection kiosk UI design (Korean + English)",
+          "Owner communication script guide provided"
+        ],
+        "keyInsight": "The economic barriers are low. The CX barriers are high. Three missing elements were costing real revenue.",
+        "before": [
+          "Korean-only kiosk",
+          "Forced single-seat direction",
+          "No dietary information for international guests",
+          "Wayfinding failure"
+        ],
+        "after": [
+          "Bilingual kiosk design (Korean + English)",
+          "Autonomous seat selection plan",
+          "Dietary label system proposal",
+          "Solo-Friendly Certification design"
+        ],
+        "tags": ["CX Research", "Space Redesign", "Kiosk Design", "Multilingual"]
+      }
+    ]
+  },
+
+  "cta": {
+    "label": "START A PROJECT",
+    "headline": "Ready to change things together?",
+    "sub": "Regardless of restaurant size, any owner who wants to create a space that respects solo diners is welcome.",
+    "items": [
+      {
+        "icon": "search",
+        "title": "On-Site Diagnosis",
+        "desc": "We visit your space to assess layout and customer flow firsthand."
+      },
+      {
+        "icon": "pencil",
+        "title": "Solution Design",
+        "desc": "We build a research-backed plan tailored to your specific space."
+      },
+      {
+        "icon": "rocket",
+        "title": "Execution + Follow-up",
+        "desc": "Even after installation, we keep data reports and communication guides updated."
+      }
+    ],
+    "contactLabel": "Get in Touch",
+    "contactEmail": "tableonecx@hallym.ac.kr",
+    "portfolioLabel": "View Portfolio"
+  },
+
+  "nav": {
+    "logo": "Table One",
+    "links": [
+      { "label": "Why Solo-Dining CX?", "anchor": "#problem" },
+      { "label": "Services",            "anchor": "#services" },
+      { "label": "Live Demo",           "anchor": "#demo" },
+      { "label": "Impact",              "anchor": "#effects" },
+      { "label": "Case Study",          "anchor": "#portfolio" },
+      { "label": "Contact",             "anchor": "#cta" }
+    ],
+    "ctaLabel": "Get in Touch"
+  },
+
+  "footer": {
+    "copy": "Table One CX Consulting — CX Design Team H2S",
+    "sub": "Hallym University · Digital CX for Startup 2026-1 · Advisor: Prof. Sungwoo Kim"
+  }
+}

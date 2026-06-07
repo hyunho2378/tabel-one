@@ -1,11 +1,8 @@
 import { color, font, type, layout } from '../tokens/web.js';
 import { useReveal } from '../lib/useReveal.js';
 import SectionHeader from '../components/SectionHeader.jsx';
-import data from '../data/consulting.json';
-
-const { portfolio } = data;
-
-export default function ConsultingPortfolio() {
+export default function ConsultingPortfolio({ data }) {
+  const { portfolio } = data;
   const [cardRef, cardVisible] = useReveal({ threshold: 0.05 });
 
   return (

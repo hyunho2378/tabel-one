@@ -1,13 +1,10 @@
 import { color, font, type, layout } from '../tokens/web.js';
 import { useReveal } from '../lib/useReveal.js';
 import SectionHeader from '../components/SectionHeader.jsx';
-import data from '../data/consulting.json';
-
-const { effects } = data;
-
 const ICON_CHARS = { users: '◎', rotate: '↻', heart: '♥', globe: '⊕' };
 
-export default function ConsultingEffects() {
+export default function ConsultingEffects({ data }) {
+  const { effects } = data;
   const [cardsRef, cardsVisible] = useReveal({ threshold: 0.08 });
 
   return (

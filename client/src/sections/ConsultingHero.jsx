@@ -1,9 +1,37 @@
 import { color, font, type, layout } from '../tokens/web.js';
 import { useReveal } from '../lib/useReveal.js';
 import { useCountUp } from '../lib/useCountUp.js';
-import data from '../data/consulting.json';
 
-const { hero } = data;
+const SEAT_MAP_I18N = {
+  ko: {
+    header: '1F 홀 · 좌석 배치도',
+    live: '실시간',
+    zoneWindow: '창가 파티션 1인석',
+    zoneTwoSeat: '2인석',
+    zoneFourSeat: '4인석',
+    zoneRegular: '일반 1인석 · 2인석',
+    recLabel: '추천',
+    legend: [
+      { bg: '#7C3AED', label: '추천' },
+      { bg: 'rgba(124,58,237,0.38)', label: '선택 가능' },
+      { bg: 'rgba(255,255,255,0.15)', label: '사용 중' },
+    ],
+  },
+  en: {
+    header: '1F Hall · Seat Map',
+    live: 'Live',
+    zoneWindow: 'Window · Solo',
+    zoneTwoSeat: '2-Seat',
+    zoneFourSeat: '4-Seat',
+    zoneRegular: 'Solo & 2-Seat',
+    recLabel: 'Best',
+    legend: [
+      { bg: '#7C3AED', label: 'Recommended' },
+      { bg: 'rgba(124,58,237,0.38)', label: 'Available' },
+      { bg: 'rgba(255,255,255,0.15)', label: 'Occupied' },
+    ],
+  },
+};
 
 function StatItem({ stat }) {
   const [ref, count] = useCountUp(stat.value);
@@ -41,7 +69,9 @@ function StatItem({ stat }) {
   );
 }
 
-function SeatMap() {
+function SeatMap({ lang = 'ko' }) {
+  const sm = SEAT_MAP_I18N[lang] ?? SEAT_MAP_I18N.ko;
+
   return (
     <div style={{
       background: '#0D0D0D',
@@ -60,11 +90,11 @@ function SeatMap() {
         alignItems: 'center',
       }}>
         <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-          1F 홀 · 좌석 배치도
+          {sm.header}
         </span>
         <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
           <div style={{ width: 6, height: 6, borderRadius: '50%', background: color.ok }} />
-          <span style={{ fontSize: 10, color: color.ok, fontWeight: 600 }}>실시간</span>
+          <span style={{ fontSize: 10, color: color.ok, fontWeight: 600 }}>{sm.live}</span>
         </div>
       </div>
 
@@ -72,7 +102,7 @@ function SeatMap() {
       <svg viewBox="0 0 280 228" width="100%" style={{ display: 'block' }}>
 
         {/* ── 창가 파티션 1인석 ── */}
-        <text x="12" y="14" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>창가 파티션 1인석</text>
+        <text x="12" y="14" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>{sm.zoneWindow}</text>
         <line x1="12" y1="19" x2="268" y2="19" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
 
         {/* W1 occupied */}
@@ -86,7 +116,7 @@ function SeatMap() {
 
         {/* W3 RECOMMENDED */}
         <rect x="118" y="22" width="44" height="48" rx="7" fill="rgba(124,58,237,0.2)" stroke="#7C3AED" strokeWidth="2" />
-        <text x="140" y="43" textAnchor="middle" fill="#A78BFA" fontSize="8.5" fontWeight="700" fontFamily={font.family}>추천</text>
+        <text x="140" y="43" textAnchor="middle" fill="#A78BFA" fontSize="8.5" fontWeight="700" fontFamily={font.family}>{sm.recLabel}</text>
         <text x="140" y="57" textAnchor="middle" fill="#7C3AED" fontSize="12" fontWeight="800" fontFamily={font.family}>★ 3</text>
 
         {/* W4 available */}
@@ -102,8 +132,8 @@ function SeatMap() {
         <line x1="12" y1="78" x2="268" y2="78" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
 
         {/* ── 2인석 / 4인석 ── */}
-        <text x="12" y="91" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>2인석</text>
-        <text x="146" y="91" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>4인석</text>
+        <text x="12" y="91" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>{sm.zoneTwoSeat}</text>
+        <text x="146" y="91" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>{sm.zoneFourSeat}</text>
 
         {/* 2인석 frame + chairs */}
         <rect x="12" y="96" width="114" height="60" rx="8" fill="rgba(124,58,237,0.04)" stroke="rgba(124,58,237,0.18)" strokeWidth="1" />
@@ -112,7 +142,7 @@ function SeatMap() {
         <rect x="70" y="104" width="44" height="42" rx="5" fill="rgba(124,58,237,0.09)" stroke="rgba(124,58,237,0.32)" strokeWidth="1" />
         <text x="92" y="129" textAnchor="middle" fill="rgba(255,255,255,0.28)" fontSize="8" fontFamily={font.family}>7</text>
 
-        {/* 4인석 frame + chairs (2×2: top occupied / bottom available+occupied) */}
+        {/* 4인석 frame + chairs */}
         <rect x="140" y="96" width="128" height="60" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
         <rect x="148" y="103" width="50" height="20" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
         <circle cx="173" cy="113" r="2.5" fill="rgba(255,255,255,0.14)" />
@@ -127,7 +157,7 @@ function SeatMap() {
         <line x1="12" y1="166" x2="268" y2="166" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
 
         {/* ── 일반 1인석 · 2인석 ── */}
-        <text x="12" y="179" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>일반 1인석 · 2인석</text>
+        <text x="12" y="179" fill="rgba(255,255,255,0.2)" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fontFamily={font.family}>{sm.zoneRegular}</text>
 
         {/* F1 available */}
         <rect x="12" y="185" width="40" height="36" rx="6" fill="rgba(124,58,237,0.07)" stroke="rgba(124,58,237,0.38)" strokeWidth="1" />
@@ -154,11 +184,7 @@ function SeatMap() {
         gap: 14,
         justifyContent: 'center',
       }}>
-        {[
-          { bg: '#7C3AED', label: '추천' },
-          { bg: 'rgba(124,58,237,0.38)', label: '선택 가능' },
-          { bg: 'rgba(255,255,255,0.15)', label: '사용 중' },
-        ].map(({ bg, label }) => (
+        {sm.legend.map(({ bg, label }) => (
           <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
             <div style={{ width: 10, height: 10, borderRadius: 3, background: bg, flexShrink: 0 }} />
             <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', fontFamily: font.family }}>{label}</span>
@@ -169,7 +195,8 @@ function SeatMap() {
   );
 }
 
-export default function ConsultingHero() {
+export default function ConsultingHero({ data, lang = 'ko' }) {
+  const { hero } = data;
   const [leftRef, leftVisible] = useReveal({ threshold: 0.05 });
 
   return (
@@ -258,17 +285,19 @@ export default function ConsultingHero() {
               ))}
             </h1>
 
-            {/* Headline EN */}
-            <p style={{
-              margin: '0 0 20px',
-              fontFamily: font.family,
-              fontSize: type.lead.size,
-              fontWeight: 500,
-              color: color.primaryLight,
-              letterSpacing: '-0.01em',
-            }}>
-              {hero.headlineEn}
-            </p>
+            {/* Headline EN — hidden when empty (English site) */}
+            {hero.headlineEn && (
+              <p style={{
+                margin: '0 0 20px',
+                fontFamily: font.family,
+                fontSize: type.lead.size,
+                fontWeight: 500,
+                color: color.primaryLight,
+                letterSpacing: '-0.01em',
+              }}>
+                {hero.headlineEn}
+              </p>
+            )}
 
             {/* Sub — \n → <br /> */}
             <p style={{
@@ -332,7 +361,7 @@ export default function ConsultingHero() {
               justifyContent: 'center',
             }}
           >
-            <SeatMap />
+            <SeatMap lang={lang} />
           </div>
         </div>
 

@@ -1,16 +1,12 @@
 import { color, font, type, layout } from '../tokens/web.js';
 import { useReveal } from '../lib/useReveal.js';
 import SectionHeader from '../components/SectionHeader.jsx';
-import data from '../data/consulting.json';
-
-const { problem } = data;
-
-function ClaimItem({ claim, i, visible }) {
+function ClaimItem({ claim, i, visible, isLast }) {
   return (
     <div style={{
       paddingTop: 'clamp(17px, 2.1vw, 29px)',
       paddingBottom: 'clamp(17px, 2.1vw, 29px)',
-      borderBottom: i < problem.claims.length - 1 ? `1px solid ${color.line}` : 'none',
+      borderBottom: isLast ? 'none' : `1px solid ${color.line}`,
       display: 'flex',
       gap: 'clamp(20px, 3vw, 48px)',
       alignItems: 'flex-start',
@@ -80,7 +76,8 @@ function ClaimItem({ claim, i, visible }) {
   );
 }
 
-export default function ConsultingProblem() {
+export default function ConsultingProblem({ data }) {
+  const { problem } = data;
   const [listRef, listVisible] = useReveal({ threshold: 0.06 });
   const [closingRef, closingVisible] = useReveal({ threshold: 0.2 });
 
@@ -101,7 +98,7 @@ export default function ConsultingProblem() {
       {/* Claims list */}
       <div ref={listRef}>
         {problem.claims.map((claim, i) => (
-          <ClaimItem key={claim.id} claim={claim} i={i} visible={listVisible} />
+          <ClaimItem key={claim.id} claim={claim} i={i} visible={listVisible} isLast={i === problem.claims.length - 1} />
         ))}
       </div>
 

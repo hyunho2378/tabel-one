@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { Languages } from 'lucide-react';
 import { color, font, layout } from '../tokens/web.js';
-import data from '../data/consulting.json';
 
-const { nav } = data;
-
-export default function ConsultingNav() {
+export default function ConsultingNav({ data, lang, onLangChange }) {
+  const { nav } = data;
   const [open, setOpen] = useState(false);
+  const [toggleHover, setToggleHover] = useState(false);
 
   return (
     <nav style={{
@@ -72,7 +72,48 @@ export default function ConsultingNav() {
           ))}
         </ul>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+          {/* Language toggle — always visible */}
+          <div
+            onMouseEnter={() => setToggleHover(true)}
+            onMouseLeave={() => setToggleHover(false)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 2,
+              background: 'rgba(255,255,255,0.07)',
+              borderRadius: 999,
+              padding: '2px 2px 2px 8px',
+            }}
+          >
+            <Languages
+              size={16}
+              color={toggleHover ? color.primaryLight : color.inkMuted}
+              style={{ flexShrink: 0, transition: 'color 0.2s' }}
+            />
+            {['ko', 'en'].map(l => (
+              <button
+                key={l}
+                onClick={() => onLangChange(l)}
+                style={{
+                  background: lang === l ? color.primary : 'transparent',
+                  color: lang === l ? '#fff' : color.inkMuted,
+                  border: 'none',
+                  borderRadius: 999,
+                  fontFamily: font.family,
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: '0.06em',
+                  padding: '5px 10px',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s, color 0.2s',
+                }}
+              >
+                {l === 'ko' ? 'KO' : 'EN'}
+              </button>
+            ))}
+          </div>
+
           {/* CTA button */}
           <a
             href="#cta"

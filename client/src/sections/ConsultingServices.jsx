@@ -2,10 +2,6 @@ import { useState } from 'react';
 import { color, font, type, layout } from '../tokens/web.js';
 import { useReveal } from '../lib/useReveal.js';
 import SectionHeader from '../components/SectionHeader.jsx';
-import data from '../data/consulting.json';
-
-const { services } = data;
-
 function ServiceCard({ svc, visible, delay, expanded, onToggle }) {
   const [hovered, setHovered] = useState(false);
 
@@ -184,7 +180,8 @@ function ServiceCard({ svc, visible, delay, expanded, onToggle }) {
   );
 }
 
-export default function ConsultingServices() {
+export default function ConsultingServices({ data }) {
+  const { services } = data;
   const [cardsRef, cardsVisible] = useReveal({ threshold: 0.06 });
   const [expandedId, setExpandedId] = useState(null);
 

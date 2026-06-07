@@ -1,13 +1,10 @@
 import { color, font, type, layout } from '../tokens/web.js';
 import { useReveal } from '../lib/useReveal.js';
 import SectionHeader from '../components/SectionHeader.jsx';
-import data from '../data/consulting.json';
-
-const { cta, footer } = data;
-
 const ICON_CHARS = { search: '⊙', pencil: '✎', rocket: '↗' };
 
-export default function ConsultingCTA() {
+export default function ConsultingCTA({ data }) {
+  const { cta, footer } = data;
   const [processRef, processVisible] = useReveal({ threshold: 0.1 });
   const [btnRef, btnVisible] = useReveal({ threshold: 0.2 });
 
