@@ -1,0 +1,134 @@
+{
+  "kiosk": {
+    "title": "손님 키오스크",
+    "sub": "입장 시 전체 좌석 확인 후 직접 선택",
+    "seats": [
+      { "id": 1, "label": "1", "status": "available", "type": "1인석", "x": 8,   "y": 14, "w": 58, "h": 64 },
+      { "id": 2, "label": "2", "status": "available", "type": "1인석", "x": 72,  "y": 14, "w": 58, "h": 64 },
+      { "id": 3, "label": "3", "status": "available", "type": "1인석", "x": 136, "y": 14, "w": 58, "h": 64, "recommended": true },
+      { "id": 4, "label": "4", "status": "available", "type": "2인석", "x": 8,   "y": 96, "w": 108, "h": 70 },
+      { "id": 5, "label": "5", "status": "available", "type": "4인석", "x": 212, "y": 18, "w": 100, "h": 156 },
+      { "id": 6, "label": "6", "status": "available", "type": "1인석", "x": 122, "y": 96, "w": 72,  "h": 52 }
+    ],
+    "languages": ["한국어", "English", "عربي"],
+    "langKeys": ["ko", "en", "ar"],
+    "i18n": {
+      "ko": {
+        "kioskTitle": "손님 키오스크",
+        "kioskSub": "입장 시 전체 좌석 확인 후 직접 선택",
+        "stepLanguage": "언어 선택",
+        "dashboardTitle": "사장님 대시보드",
+        "dashboardSub": "주방에서 실시간 확인",
+        "modeTitle": "운영 모드",
+        "modeRelaxed": "한가함",
+        "modeBusy": "바쁨",
+        "modeRelaxedDesc": "알바 있음, 4인석 칸막이 서비스 제공",
+        "modeBusyDesc": "1인 운영, 4인석 1~2인 제한",
+        "selectPrompt": "앉고 싶은 자리를 선택하세요",
+        "confirmLabel": "이 자리로 할게요",
+        "seatSuffix": "번",
+        "recommended": "★ 추천",
+        "partySizePrompt": "몇 분이세요?",
+        "fourSeatBusy": "3인 이상만",
+        "fourSeatBusyAlert": "바쁜 시간에는 4인석은 3인 이상만 이용 가능합니다.",
+        "zones": {
+          "windowSolo": "창가 파티션 1인석",
+          "twoSeat": "2인석",
+          "fourSeat": "4인석",
+          "regularSolo": "일반 1인석",
+          "kitchen": "주방",
+          "entrance": "← 입구"
+        },
+        "status": {
+          "occupied": "사용 중",
+          "available": "비어있음",
+          "selecting": "선택 중",
+          "confirmed": "방금 입장"
+        },
+        "notification": "{n}번 테이블 손님 입장",
+        "dir": "ltr"
+      },
+      "en": {
+        "kioskTitle": "Guest Kiosk",
+        "kioskSub": "Check all seats and tap to select",
+        "stepLanguage": "Select Language",
+        "dashboardTitle": "Owner Dashboard",
+        "dashboardSub": "Real-time view from the kitchen",
+        "modeTitle": "Operation Mode",
+        "modeRelaxed": "Relaxed",
+        "modeBusy": "Busy",
+        "modeRelaxedDesc": "Staff on shift — partition service for 4-seat tables",
+        "modeBusyDesc": "Solo shift — 4-seat tables: 3+ guests only",
+        "selectPrompt": "Choose your seat",
+        "confirmLabel": "Confirm seat",
+        "seatSuffix": "",
+        "recommended": "★ Best",
+        "partySizePrompt": "How many guests?",
+        "fourSeatBusy": "3+ guests only",
+        "fourSeatBusyAlert": "During busy hours, 4-seat tables require 3 or more guests.",
+        "zones": {
+          "windowSolo": "Window · Solo",
+          "twoSeat": "2-Seat",
+          "fourSeat": "4-Seat",
+          "regularSolo": "Solo",
+          "kitchen": "Kitchen",
+          "entrance": "← Entrance"
+        },
+        "status": {
+          "occupied": "Occupied",
+          "available": "Open",
+          "selecting": "Selecting",
+          "confirmed": "Seated"
+        },
+        "notification": "Table {n} — Guest seated",
+        "dir": "ltr"
+      },
+      "ar": {
+        "kioskTitle": "كيوسك الضيوف",
+        "kioskSub": "تحقق من جميع المقاعد واضغط للاختيار",
+        "stepLanguage": "اختر اللغة",
+        "dashboardTitle": "لوحة تحكم المالك",
+        "dashboardSub": "مراقبة فورية من المطبخ",
+        "modeTitle": "Operation Mode",
+        "modeRelaxed": "Relaxed",
+        "modeBusy": "Busy",
+        "modeRelaxedDesc": "Staff on shift — partition service for 4-seat tables",
+        "modeBusyDesc": "Solo shift — 4-seat tables: 3+ guests only",
+        "selectPrompt": "اختر مقعدك",
+        "confirmLabel": "تأكيد المقعد",
+        "seatSuffix": "",
+        "recommended": "★ مُوصى",
+        "partySizePrompt": "كم عدد الضيوف؟",
+        "fourSeatBusy": "3 أشخاص فأكثر",
+        "fourSeatBusyAlert": "خلال أوقات الذروة، طاولات 4 مقاعد تتطلب 3 أشخاص أو أكثر.",
+        "zones": {
+          "windowSolo": "نافذة فردي",
+          "twoSeat": "مقعدان",
+          "fourSeat": "4 مقاعد",
+          "regularSolo": "قسم فردي",
+          "kitchen": "المطبخ",
+          "entrance": "المدخل"
+        },
+        "status": {
+          "occupied": "مشغول",
+          "available": "متاح",
+          "selecting": "اختيار",
+          "confirmed": "دخل"
+        },
+        "notification": "الطاولة {n} — دخل الضيف",
+        "dir": "rtl"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "사장님 대시보드",
+    "sub": "주방에서 실시간 확인",
+    "statusLabels": {
+      "occupied": "사용 중",
+      "available": "비어있음",
+      "selecting": "선택 중",
+      "confirmed": "방금 입장"
+    },
+    "notification": "{n}번 테이블 손님 입장"
+  }
+}
